@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JKMarkerView" customModule="Jack" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="aJ8-Vk-3oc"/>
+                <outlet property="imageView" destination="LCl-30-bW9" id="faB-YR-Ov5"/>
+                <outlet property="markerImage" destination="zWi-nI-s5a" id="B0p-t7-0FA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="105" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_120x105.png" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-nI-s5a">
+                    <rect key="frame" x="0.0" y="0.0" width="105" height="120"/>
+                    <color key="tintColor" red="0.97731443029999998" green="0.98389116060000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zWi-nI-s5a" secondAttribute="height" multiplier="7:8" id="j8o-ca-bmv"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCl-30-bW9" customClass="AImageView" customModule="Jack" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LCl-30-bW9" secondAttribute="height" id="zuv-md-9fA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusRatio">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.34509803921568627" green="0.35294117647058826" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthRatio">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="LCl-30-bW9" firstAttribute="top" secondItem="zWi-nI-s5a" secondAttribute="top" id="BbZ-Qw-9nF"/>
+                <constraint firstItem="zWi-nI-s5a" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Bs3-c2-LoW"/>
+                <constraint firstItem="LCl-30-bW9" firstAttribute="leading" secondItem="zWi-nI-s5a" secondAttribute="leading" id="Dng-l2-fzo"/>
+                <constraint firstItem="zWi-nI-s5a" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bfS-HA-5fK"/>
+                <constraint firstItem="zWi-nI-s5a" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ntQ-rA-MhM"/>
+                <constraint firstItem="zWi-nI-s5a" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="v6M-SB-CJV"/>
+                <constraint firstItem="LCl-30-bW9" firstAttribute="trailing" secondItem="zWi-nI-s5a" secondAttribute="trailing" id="wMS-5W-wJT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="marker_120x105.png" width="105" height="119"/>
+    </resources>
+</document>

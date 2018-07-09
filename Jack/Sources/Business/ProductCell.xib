@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="80" id="foc-lI-sBD" customClass="ProductCell" customModule="Jack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="foc-lI-sBD" id="Yc4-YQ-JkB">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzt-Ri-cfC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-UY-3oh" customClass="AImageView" customModule="Jack" customModuleProvider="target">
+                                <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d3g-UY-3oh" secondAttribute="height" multiplier="1:1" id="M8X-3N-Fo0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusRatio">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-JH-Vga">
+                                <rect key="frame" x="70" y="5" width="228.5" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-BC-YYC" customClass="PriceLabel" customModule="Jack" customModuleProvider="target">
+                                <rect key="frame" x="303.5" y="5" width="66.5" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R4K-BC-YYC" secondAttribute="height" multiplier="11:10" id="IaN-lv-ZFX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d3g-UY-3oh" firstAttribute="leading" secondItem="Jzt-Ri-cfC" secondAttribute="leading" constant="5" id="AsA-L2-ksB"/>
+                            <constraint firstAttribute="trailing" secondItem="R4K-BC-YYC" secondAttribute="trailing" constant="5" id="I6v-Wd-ZNl"/>
+                            <constraint firstAttribute="bottom" secondItem="xcq-JH-Vga" secondAttribute="bottom" constant="5" id="KMA-a2-9xx"/>
+                            <constraint firstItem="d3g-UY-3oh" firstAttribute="top" secondItem="Jzt-Ri-cfC" secondAttribute="top" constant="5" id="QJW-zS-3eo"/>
+                            <constraint firstAttribute="bottom" secondItem="d3g-UY-3oh" secondAttribute="bottom" constant="5" id="Tbo-RF-87l"/>
+                            <constraint firstItem="xcq-JH-Vga" firstAttribute="leading" secondItem="d3g-UY-3oh" secondAttribute="trailing" constant="5" id="Ttv-cr-gRf"/>
+                            <constraint firstItem="R4K-BC-YYC" firstAttribute="leading" secondItem="xcq-JH-Vga" secondAttribute="trailing" constant="5" id="WS7-nN-Obq"/>
+                            <constraint firstAttribute="bottom" secondItem="R4K-BC-YYC" secondAttribute="bottom" constant="5" id="XPT-aH-BMZ"/>
+                            <constraint firstItem="R4K-BC-YYC" firstAttribute="top" secondItem="Jzt-Ri-cfC" secondAttribute="top" constant="5" id="kmG-92-EKs"/>
+                            <constraint firstItem="xcq-JH-Vga" firstAttribute="top" secondItem="Jzt-Ri-cfC" secondAttribute="top" constant="5" id="pWG-ph-cru"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Jzt-Ri-cfC" firstAttribute="leading" secondItem="Yc4-YQ-JkB" secondAttribute="leading" id="Isq-7f-fWK"/>
+                    <constraint firstAttribute="trailing" secondItem="Jzt-Ri-cfC" secondAttribute="trailing" id="Mj7-Eu-xHe"/>
+                    <constraint firstAttribute="bottom" secondItem="Jzt-Ri-cfC" secondAttribute="bottom" id="c2F-Lq-ldv"/>
+                    <constraint firstItem="Jzt-Ri-cfC" firstAttribute="top" secondItem="Yc4-YQ-JkB" secondAttribute="top" id="iJv-6j-kx7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="nameLabel" destination="xcq-JH-Vga" id="qD8-oM-ypV"/>
+                <outlet property="priceView" destination="R4K-BC-YYC" id="SUH-tK-1I2"/>
+                <outlet property="productImageView" destination="d3g-UY-3oh" id="Db7-7m-u7E"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </tableViewCell>
+    </objects>
+</document>

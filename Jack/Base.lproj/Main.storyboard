@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFH-XS-e3p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="Aqz-R1-9hG">
+            <objects>
+                <viewController id="2c4-JZ-rTl" customClass="StartViewController" customModule="Jack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YJL-wV-QbN"/>
+                        <viewControllerLayoutGuide type="bottom" id="XlT-U8-GXv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qs2-Tq-3hY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jack_logo_main.png" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-KL-J2O">
+                                <rect key="frame" x="178" y="258.5" width="19" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JxH-KL-J2O" secondAttribute="height" multiplier="137:116" id="f8z-ta-4GH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-lj-987" customClass="JKButton" customModule="Jack" customModuleProvider="target">
+                                <rect key="frame" x="87" y="552" width="200" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="300" constant="200" id="GZz-q9-b2a"/>
+                                    <constraint firstAttribute="height" constant="55" id="USd-Sz-PZz"/>
+                                </constraints>
+                                <state key="normal" title="LOGIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonClick:" destination="2c4-JZ-rTl" eventType="touchUpInside" id="eTL-7I-dEY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAV-fm-xM5">
+                                <rect key="frame" x="117" y="305" width="141" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZAV-fm-xM5" secondAttribute="height" multiplier="47:19" id="CVO-Fx-GtC"/>
+                                    <constraint firstAttribute="height" constant="57" id="VBS-Uq-a39"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.40784313729999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Pi-lj-987" firstAttribute="centerX" secondItem="qs2-Tq-3hY" secondAttribute="centerX" id="7TW-na-cDV"/>
+                            <constraint firstItem="JxH-KL-J2O" firstAttribute="centerX" secondItem="qs2-Tq-3hY" secondAttribute="centerX" id="C10-YS-XcR"/>
+                            <constraint firstItem="ZAV-fm-xM5" firstAttribute="centerY" secondItem="qs2-Tq-3hY" secondAttribute="centerY" id="E0L-tT-CxK"/>
+                            <constraint firstItem="ZAV-fm-xM5" firstAttribute="top" secondItem="JxH-KL-J2O" secondAttribute="bottom" constant="30.5" id="MAn-Bp-8Xf"/>
+                            <constraint firstItem="XlT-U8-GXv" firstAttribute="top" secondItem="9Pi-lj-987" secondAttribute="bottom" constant="60" id="RyZ-nq-aXq"/>
+                            <constraint firstItem="ZAV-fm-xM5" firstAttribute="centerX" secondItem="qs2-Tq-3hY" secondAttribute="centerX" id="f88-fs-39o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G7F-mT-Qq4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hik-87-wSs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVg-B4-TX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-997.60000000000002" y="151.57421289355324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lAN-jw-2IE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NFH-XS-e3p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cxk-3I-LTr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2c4-JZ-rTl" kind="relationship" relationship="rootViewController" id="uAX-9J-gPL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5SA-BC-NLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1936.8" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Jack_logo_main.png" width="16" height="16"/>
+    </resources>
+</document>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderOverviewCell" rowHeight="44" id="Vik-Yh-AeJ" customClass="OrderOverviewCell" customModule="Jack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="522" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vik-Yh-AeJ" id="eSY-3e-pb5">
+                <rect key="frame" x="0.0" y="0.0" width="522" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0M-GN-EDA">
+                        <rect key="frame" x="0.0" y="0.0" width="522" height="43.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-MU-wHx">
+                                <rect key="frame" x="0.0" y="0.0" width="380.5" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quK-qS-AaZ" customClass="CountLabel" customModule="Jack" customModuleProvider="target">
+                                <rect key="frame" x="380.5" y="0.0" width="43.5" height="43.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="quK-qS-AaZ" secondAttribute="height" multiplier="1:1" id="hOy-Ht-h3B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO1-bh-njN" customClass="PriceLabel" customModule="Jack" customModuleProvider="target">
+                                <rect key="frame" x="424" y="0.0" width="98" height="43.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fO1-bh-njN" secondAttribute="height" multiplier="9:4" id="4B7-Bs-LgO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="quK-qS-AaZ" firstAttribute="leading" secondItem="y3E-MU-wHx" secondAttribute="trailing" id="1l6-dl-bSs"/>
+                            <constraint firstAttribute="bottom" secondItem="y3E-MU-wHx" secondAttribute="bottom" id="E6s-ij-z7X"/>
+                            <constraint firstItem="fO1-bh-njN" firstAttribute="leading" secondItem="quK-qS-AaZ" secondAttribute="trailing" id="H9z-qV-Tye"/>
+                            <constraint firstAttribute="bottom" secondItem="fO1-bh-njN" secondAttribute="bottom" id="IGc-Pi-Bif"/>
+                            <constraint firstItem="y3E-MU-wHx" firstAttribute="leading" secondItem="x0M-GN-EDA" secondAttribute="leading" id="UaR-y7-ypx"/>
+                            <constraint firstItem="quK-qS-AaZ" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="Uec-tn-7YJ"/>
+                            <constraint firstItem="fO1-bh-njN" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="f4o-8h-T5R"/>
+                            <constraint firstAttribute="bottom" secondItem="quK-qS-AaZ" secondAttribute="bottom" id="i78-mo-MIp"/>
+                            <constraint firstAttribute="trailing" secondItem="fO1-bh-njN" secondAttribute="trailing" id="kqe-sI-f4i"/>
+                            <constraint firstItem="y3E-MU-wHx" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="zJR-Nh-LLa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="x0M-GN-EDA" firstAttribute="leading" secondItem="eSY-3e-pb5" secondAttribute="leading" id="83a-LD-Ins"/>
+                    <constraint firstItem="x0M-GN-EDA" firstAttribute="top" secondItem="eSY-3e-pb5" secondAttribute="top" id="aRI-Ea-cIS"/>
+                    <constraint firstAttribute="bottom" secondItem="x0M-GN-EDA" secondAttribute="bottom" id="b9u-ud-htT"/>
+                    <constraint firstAttribute="trailing" secondItem="x0M-GN-EDA" secondAttribute="trailing" id="mFH-z7-E5Z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="countLabel" destination="quK-qS-AaZ" id="m80-N9-dVy"/>
+                <outlet property="nameLabel" destination="y3E-MU-wHx" id="gWL-fQ-obs"/>
+                <outlet property="priceView" destination="fO1-bh-njN" id="P3G-qV-0OB"/>
+            </connections>
+            <point key="canvasLocation" x="-53" y="31"/>
+        </tableViewCell>
+    </objects>
+</document>
