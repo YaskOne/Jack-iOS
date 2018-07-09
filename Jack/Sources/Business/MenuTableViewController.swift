@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 struct ProductItem {
     var product: JKProduct?
@@ -47,7 +48,7 @@ class MenuTableViewController: ATableViewController {
         return APopoverViewController()
     }()
     
-    var place: JKPlace? {
+    var place: JKBusiness? {
         didSet {
             if let place = place {
                 menu = place.categories

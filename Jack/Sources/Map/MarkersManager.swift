@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import JackModel
 
 class MarkersManager {
     
@@ -31,20 +32,23 @@ class MarkersManager {
     func fetchMarkers(_ boundaries: JKBoundaries) {
         if let lastFetch = lastFetch, lastFetch.uptimeNanoseconds < now.uptimeNanoseconds - 10000000 {
             self.lastFetch = now
-            let locations = DataGenerator.shared.locationsInBoundaries(lat1: boundaries.nearLeft.latitude, lng1: boundaries.nearLeft.longitude, lat2: boundaries.farRight.latitude, lng2: boundaries.farRight.longitude)
-            addLocations(locations)
+            JKMediator.fetchBusiness(boundaries: boundaries, success: { businesses in
+                self.addMarkers(businesses)
+            }, failure: {})
+//            let locations = DataGenerator.shared.locationsInBoundaries(lat1: boundaries.nearLeft.latitude, lng1: boundaries.nearLeft.longitude, lat2: boundaries.farRight.latitude, lng2: boundaries.farRight.longitude)
+//            addLocations(locations)
         }
     }
     
-    func addLocations(_ locations: Array<JKLocation>) {
-        var locations = locations
-        for (i,location) in locations.enumerated().reversed() {
+    func addMarkers(_ businesses: Array<JKBusiness>) {
+        var businesses = businesses
+        for (i,location) in businesses.enumerated().reversed() {
             if let marker = currentMarkers[location.id] {
                 if marker.displayed {
                     marker.map = mapView
                 }
                 marker.keep = true
-                locations.remove(at: i)
+                businesses.remove(at: i)
             }
         }
         for marker in currentMarkers.values {
@@ -56,24 +60,24 @@ class MarkersManager {
                 marker.keep = false
             }
         }
-        for location in locations {
-            addMarker(location)
+        for business in businesses {
+            addMarker(business)
         }
     }
     
-    func addMarker(_ location: JKLocation) {
-        if let marker = markers[location.id] {
-            currentMarkers[location.id] = marker
+    func addMarker(_ business: JKBusiness) {
+        if let marker = markers[business.id] {
+            currentMarkers[business.id] = marker
             marker.map = mapView
             return
         }
     
-        let marker = JKMarker.init(location)
+        let marker = JKMarker.init(business)
         
         marker.map = mapView
         
-        markers[location.id] = marker
-        currentMarkers[location.id] = marker
+        markers[business.id] = marker
+        currentMarkers[business.id] = marker
     }
 }
 
@@ -94,8 +98,8 @@ class JKMarker: GMSMarker {
         return self.map != nil
     }
     
-    init(_ location: JKLocation) {
-        self.location = location
+    init(_ business: JKBusiness) {
+        self.location = business.location
         super.init()
         self.position = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
         

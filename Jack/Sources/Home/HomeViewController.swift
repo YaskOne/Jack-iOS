@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 let mapTappedNotification = Notification.Name("mapTappedNotification")
 let openLocationNotification = Notification.Name("openLocationNotification")

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import JackModel
 
 class JKSession {
     
@@ -20,7 +21,7 @@ class JKSession {
     func startSession() {
         let defaults = UserDefaults.standard
         
-        if let lat = defaults.object(forKey: JKKeys.lat) as? CLLocationDegrees, let lng = defaults.object(forKey: JKKeys.lng) as? CLLocationDegrees {
+        if let lat = defaults.object(forKey: JKKeys.latitude) as? CLLocationDegrees, let lng = defaults.object(forKey: JKKeys.longitude) as? CLLocationDegrees {
             lastPos = CLLocation.init(latitude: lat, longitude: lng)
         }
         
@@ -29,8 +30,8 @@ class JKSession {
     func closeSession() {
         let defaults = UserDefaults.standard
 
-        defaults.set(lastPos?.coordinate.latitude, forKey: JKKeys.lat)
-        defaults.set(lastPos?.coordinate.longitude, forKey: JKKeys.lng)
+        defaults.set(lastPos?.coordinate.latitude, forKey: JKKeys.latitude)
+        defaults.set(lastPos?.coordinate.longitude, forKey: JKKeys.longitude)
 
     }
     

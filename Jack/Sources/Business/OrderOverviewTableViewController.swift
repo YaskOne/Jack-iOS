@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 class OrderOverviewTableViewController: ATableViewController {
     
@@ -19,7 +20,7 @@ class OrderOverviewTableViewController: ATableViewController {
         ]
     }
     
-    var place: JKPlace?
+    var place: JKBusiness?
     
     override var cellHeights: [ARowType: CGFloat] {
         return [

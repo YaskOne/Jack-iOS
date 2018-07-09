@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 class OrderViewController: UIViewController {
     
@@ -22,7 +23,7 @@ class OrderViewController: UIViewController {
         return APopoverViewController()
     }()
 
-    var place: JKPlace? {
+    var place: JKBusiness? {
         didSet {
             if let place = place {
                 nameLabel?.text = place.location.name

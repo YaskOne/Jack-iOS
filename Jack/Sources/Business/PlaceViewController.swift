@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 class PlaceViewController: UIViewController {
     
@@ -34,7 +35,7 @@ class PlaceViewController: UIViewController {
         }
     }
     
-    var place: JKPlace? {
+    var place: JKBusiness? {
         didSet {
             setUp()
         }

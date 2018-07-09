@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 class PlaceOverviewViewController: APresentableViewController {
     
@@ -20,7 +21,7 @@ class PlaceOverviewViewController: APresentableViewController {
             place = DataGenerator.shared.places[placeId]
         }
     }
-    var place: JKPlace? {
+    var place: JKBusiness? {
         didSet {
             setUp()
         }

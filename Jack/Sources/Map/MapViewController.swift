@@ -27,8 +27,8 @@ class MapViewController: UIViewController {
     
     override func loadView() {
         let camera = GMSCameraPosition.camera(
-            withLatitude: JKSession.shared.lastPos?.coordinate.latitude ?? 51.5,
-            longitude: JKSession.shared.lastPos?.coordinate.longitude ?? -0.127,
+            withLatitude: JKSession.shared.lastPos?.coordinate.latitude ?? 48.861976,
+            longitude: JKSession.shared.lastPos?.coordinate.longitude ?? 2.341345,
                                               zoom: 14)
         mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         view = mapView

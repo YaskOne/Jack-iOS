@@ -18,6 +18,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        JKNetwork.shared.server = "http://127.0.0.1:8080"
     }
     
     @IBAction func buttonClick(_ sender: Any) {

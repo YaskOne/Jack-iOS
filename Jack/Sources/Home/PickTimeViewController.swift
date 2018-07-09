@@ -19,6 +19,12 @@ class PickTimeViewController: APresentableViewController {
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        timePicker.minimumDate = Date()
+    }
+    
     @IBAction func validateTapped(_ sender: Any) {
         delegate?.timePicked(date: timePicker.date)
         dismiss(animated: true)

@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import JackModel
 
 class DataGenerator {
     
@@ -93,7 +94,7 @@ class DataGenerator {
         ]
     
     var foodCategories: [JKCategory] = [
-        JKCategory.init(id: 0, name: "Entrees"),
+        JKCategory.init(id: 0, name: "Entree"),
         JKCategory.init(id: 1, name: "Poke"),
         JKCategory.init(id: 2, name: "Bruscetta"),
     ]
@@ -115,21 +116,21 @@ class DataGenerator {
     }
     
     lazy var products: [JKProduct] = [
-        JKProduct.init(id: 0, url: urls[0], name: "Salade verte", category: 0, description: ordersDescriptions[0], price: 5.00),
-        JKProduct.init(id: 1, url: urls[1], name: "Salade betraves", category: 0, description: ordersDescriptions[1], price: 5.00),
-        JKProduct.init(id: 2, url: urls[2], name: "Salade savoyarde", category: 0, description: ordersDescriptions[2], price: 5.00),
-        JKProduct.init(id: 3, url: urls[3], name: "Salade poulet", category: 0, description: ordersDescriptions[3], price: 5.00),
-        JKProduct.init(id: 4, url: urls[4], name: "Poke bowl", category: 1, description: ordersDescriptions[4], price: 5.00),
-        JKProduct.init(id: 5, url: urls[5], name: "Poke thon", category: 1, description: ordersDescriptions[5], price: 5.00),
-        JKProduct.init(id: 6, url: urls[6], name: "Poke saumon", category: 1, description: ordersDescriptions[6], price: 5.00),
-        JKProduct.init(id: 7, url: urls[7], name: "Poke boeuf", category: 1, description: ordersDescriptions[7], price: 5.00),
-        JKProduct.init(id: 8, url: urls[8], name: "Bruscetta bowl", category: 2, description: ordersDescriptions[8], price: 10.00),
-        JKProduct.init(id: 9, url: urls[9], name: "Bruscetta thon", category: 2, description: ordersDescriptions[9], price: 10.00),
-        JKProduct.init(id: 10, url: urls[10], name: "Bruscetta saumon", category: 2, description: ordersDescriptions[10], price: 10.00),
-        JKProduct.init(id: 11, url: urls[11], name: "Bruscetta boeuf", category: 2, description: ordersDescriptions[11], price: 10.00),
+//        JKProduct.init(id: 0, url: urls[0], name: "Salade verte", category: "0", description: ordersDescriptions[0], price: 5.00),
+//        JKProduct.init(id: 1, url: urls[1], name: "Salade betraves", category: 0, description: ordersDescriptions[1], price: 5.00),
+//        JKProduct.init(id: 2, url: urls[2], name: "Salade savoyarde", category: 0, description: ordersDescriptions[2], price: 5.00),
+//        JKProduct.init(id: 3, url: urls[3], name: "Salade poulet", category: 0, description: ordersDescriptions[3], price: 5.00),
+//        JKProduct.init(id: 4, url: urls[4], name: "Poke bowl", category: 1, description: ordersDescriptions[4], price: 5.00),
+//        JKProduct.init(id: 5, url: urls[5], name: "Poke thon", category: 1, description: ordersDescriptions[5], price: 5.00),
+//        JKProduct.init(id: 6, url: urls[6], name: "Poke saumon", category: 1, description: ordersDescriptions[6], price: 5.00),
+//        JKProduct.init(id: 7, url: urls[7], name: "Poke boeuf", category: 1, description: ordersDescriptions[7], price: 5.00),
+//        JKProduct.init(id: 8, url: urls[8], name: "Bruscetta bowl", category: 2, description: ordersDescriptions[8], price: 10.00),
+//        JKProduct.init(id: 9, url: urls[9], name: "Bruscetta thon", category: 2, description: ordersDescriptions[9], price: 10.00),
+//        JKProduct.init(id: 10, url: urls[10], name: "Bruscetta saumon", category: 2, description: ordersDescriptions[10], price: 10.00),
+//        JKProduct.init(id: 11, url: urls[11], name: "Bruscetta boeuf", category: 2, description: ordersDescriptions[11], price: 10.00),
     ]
 
-    lazy var places: [Int: JKPlace] = {
+    lazy var places: [Int: JKBusiness] = {
         return placesGenerator()
     }()
     
@@ -143,8 +144,8 @@ class DataGenerator {
     
     // 49.7 / 0.8
     // 47.7 / 4.3
-    func placesGenerator() -> [Int: JKPlace] {
-        var places: [Int: JKPlace] = [:]
+    func placesGenerator() -> [Int: JKBusiness] {
+        var places: [Int: JKBusiness] = [:]
         
         let categories: [JKCategory: [JKProduct]] = [
             foodCategories[0]: [products[0],products[1],products[2],products[3]],
@@ -153,20 +154,20 @@ class DataGenerator {
             ]
         
         var i: Int = 0
-        while i < 10000 {
-            let lat = drand48() * 2 + 47.7
-            let lng = drand48() * 3.5 + 0.8
-            let url = urls[Int(arc4random_uniform(UInt32(urls.count)))]
-            let name = names[Int(arc4random_uniform(UInt32(names.count)))]
-            let type = category[Int(arc4random_uniform(UInt32(descriptions.count)))]
-            let description = descriptions[Int(arc4random_uniform(UInt32(descriptions.count)))]
-            let id = i
-            
-            let location = JKLocation.init(id: id, lat: lat, lng: lng, url: url, name: name, type: type)
-
-            i=i+1;
-            places[id] = JKPlace.init(location: location, categories: categories, description: description)
-        }
+//        while i < 10000 {
+//            let lat = drand48() * 2 + 47.7
+//            let lng = drand48() * 3.5 + 0.8
+//            let url = urls[Int(arc4random_uniform(UInt32(urls.count)))]
+//            let name = names[Int(arc4random_uniform(UInt32(names.count)))]
+//            let type = category[Int(arc4random_uniform(UInt32(descriptions.count)))]
+//            let description = descriptions[Int(arc4random_uniform(UInt32(descriptions.count)))]
+//            let id = i
+//            
+//            let location = JKLocation.init(id: id, lat: lat, lng: lng, url: url, name: name, type: type)
+//
+//            i=i+1;
+//            places[id] = JKBusiness.init(location: location, categories: categories, description: description)
+//        }
         return places
     }
     

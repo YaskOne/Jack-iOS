@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jack_logo_main.png" translatesAutoresizingMaskIntoConstraints="NO" id="JxH-KL-J2O">
-                                <rect key="frame" x="178" y="258.5" width="19" height="16"/>
+                                <rect key="frame" x="117" y="155.5" width="141" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JxH-KL-J2O" secondAttribute="height" multiplier="137:116" id="f8z-ta-4GH"/>
                                 </constraints>
@@ -94,6 +94,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Jack_logo_main.png" width="16" height="16"/>
+        <image name="Jack_logo_main.png" width="137" height="119"/>
     </resources>
 </document>
