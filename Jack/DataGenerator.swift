@@ -147,12 +147,6 @@ class DataGenerator {
     func placesGenerator() -> [Int: JKBusiness] {
         var places: [Int: JKBusiness] = [:]
         
-        let categories: [JKCategory: [JKProduct]] = [
-            foodCategories[0]: [products[0],products[1],products[2],products[3]],
-            foodCategories[1]: [products[4],products[5],products[6],products[7]],
-            foodCategories[2]: [products[8],products[9],products[10],products[11]],
-            ]
-        
         var i: Int = 0
 //        while i < 10000 {
 //            let lat = drand48() * 2 + 47.7

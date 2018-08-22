@@ -11,9 +11,9 @@ import JackModel
 
 class ProductOverviewViewController: UIViewController {
     
-    var id: Int = -1 {
+    var id: UInt = 0 {
         didSet {
-            product = DataGenerator.shared.fetchProduct(ids: [id]).first?.value ?? nil
+            product = JKProductCache.shared.getItem(id: id)
             setUp()
         }
     }

@@ -128,7 +128,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-eU-J2S" customClass="PriceLabel" customModule="Jack" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-eU-J2S" customClass="PriceLabel" customModule="ArtUtilities">
                                         <rect key="frame" x="295" y="0.0" width="80" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iDc-eU-J2S" secondAttribute="height" multiplier="2" id="uMY-YA-S4T"/>
@@ -333,27 +333,6 @@
                                     <segue destination="yFS-Be-Nzd" kind="embed" identifier="MenuSegue" id="7jx-Ce-obO"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-FB-W59" customClass="JKButton" customModule="Jack" customModuleProvider="target">
-                                <rect key="frame" x="91.5" y="597" width="192" height="50"/>
-                                <color key="backgroundColor" red="0.67982630079999995" green="0.67982630079999995" blue="0.67982630079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fFe-FB-W59" secondAttribute="height" multiplier="23:6" id="WJS-FL-wOb"/>
-                                    <constraint firstAttribute="height" constant="50" id="fuA-6O-0yP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="COMMANDER">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="11"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="blured" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="orderTapped:" destination="7Vt-XT-AxN" eventType="touchUpInside" id="ITe-t1-tJS"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3v-hh-p7I">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
@@ -430,6 +409,27 @@
                                     <constraint firstItem="ADu-1q-9SB" firstAttribute="top" secondItem="I3v-hh-p7I" secondAttribute="top" constant="-60" id="pCV-ef-GC5"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-FB-W59" customClass="JKButton" customModule="Jack">
+                                <rect key="frame" x="91" y="597" width="192" height="50"/>
+                                <color key="backgroundColor" red="0.67982630079999995" green="0.67982630079999995" blue="0.67982630079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fFe-FB-W59" secondAttribute="height" multiplier="23:6" id="WJS-FL-wOb"/>
+                                    <constraint firstAttribute="height" constant="50" id="fuA-6O-0yP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="COMMANDER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="blured" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="orderTapped:" destination="7Vt-XT-AxN" eventType="touchUpInside" id="ITe-t1-tJS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

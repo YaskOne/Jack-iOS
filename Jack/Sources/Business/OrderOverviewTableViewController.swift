@@ -30,15 +30,12 @@ class OrderOverviewTableViewController: ATableViewController {
         ]
     }
     
-    var rawSource: [JKCategory: [JKProduct]] = [:] {
+    var rawSource: [JKProduct] = [] {
         didSet {
             var section = 0
             source = []
             for item in rawSource {
-                source.append(ATableViewRow.init(type: .section, section: section, object: ATableViewSection.init(name: item.key.name)))
-                for product in item.value {
-                    source.append(ATableViewRow.init(type: .row, section: section, object: product))
-                }
+                source.append(ATableViewRow.init(type: .row, section: section, object: item))
             }
             section += 1
         }
@@ -102,8 +99,8 @@ class OrderOverviewCell: UITableViewCell {
         didSet {
             if let product = product {
                 nameLabel?.text = product.name
-                countLabel?.count = product.orderCount
-                priceView?.price = (product.price * Float(product.orderCount))
+//                countLabel?.count = product.orderCount
+                priceView?.price = product.price
             }
         }
     }

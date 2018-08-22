@@ -16,7 +16,7 @@ class JKSession {
     
     var lastPos: CLLocation?
     
-    var order: JKOrder?
+    var order: JKBuildOrder?
     
     func startSession() {
         let defaults = UserDefaults.standard

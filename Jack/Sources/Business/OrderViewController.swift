@@ -50,14 +50,14 @@ class OrderViewController: UIViewController {
         guard let source = orderViewController?.source else {
             return
         }
-        var orders: [ATableViewRow] = []
+//        var orders: [ATableViewRow] = []
         
-        for item in source {
-            if let product = item.object as? JKProduct, product.orderCount != 0 {
-                orders.append(item)
-            }
-        }
-        
+//        for item in source {
+//            if let product = item.object as? JKProduct, product.orderCount != 0 {
+//                orders.append(item)
+//            }
+//        }
+//
         guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
             return
         }

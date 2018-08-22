@@ -83,7 +83,7 @@ class HomeViewController: APresenterViewController {
     }
     
     @objc func openLocation(notif: Notification) {
-        if let id = notif.userInfo?["id"] as? Int {
+        if let id = notif.userInfo?["id"] as? UInt {
             guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "PlaceViewController") as? PlaceViewController else {
                 return
             }
@@ -93,7 +93,7 @@ class HomeViewController: APresenterViewController {
     }
     
     @objc func openLocationOverview(notif: Notification) {
-        if let id = notif.userInfo?["id"] as? Int {
+        if let id = notif.userInfo?["id"] as? UInt {
             guard let controller = homeStoryboard.instantiateViewController(withIdentifier: "PlaceOverviewViewController") as? PlaceOverviewViewController else {
                 return
             }
@@ -173,6 +173,6 @@ extension HomeViewController: TimePickerDelegate {
         pickupTimeLabel.text = "Restaurants disponibles dans \(hoursSinceNow)h\(minutesSinceNow)"
         hasSelectedPickupTime = true
 
-        JKSession.shared.order = JKOrder.init(pickupDate: date)
+        JKSession.shared.order = JKBuildOrder.init(pickupDate: date)
     }
 }

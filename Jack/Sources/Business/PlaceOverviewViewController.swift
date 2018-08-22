@@ -16,9 +16,9 @@ class PlaceOverviewViewController: APresentableViewController {
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
     
-    var placeId: Int = 0 {
+    var placeId: UInt = 0 {
         didSet {
-            place = DataGenerator.shared.places[placeId]
+            place = JKBusinessCache.shared.getItem(id: placeId)
         }
     }
     var place: JKBusiness? {

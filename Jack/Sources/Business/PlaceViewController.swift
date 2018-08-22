@@ -20,18 +20,26 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
     
     var menuViewController: MenuTableViewController?
-    
-    var orders: [JKCategory: [JKProduct]] {
-        return JKSession.shared.order?.categories ?? [:]
-    }
+//
+//    var orders: [UInt: JKProduct] {
+//        return JKSession.shared.order?.products ?? [:]
+//    }
     
     lazy var popController = {
         return APopoverViewController()
     }()
     
-    var placeId: Int = 0 {
+    var placeId: UInt = 0 {
         didSet {
-            place = DataGenerator.shared.places[placeId]
+            place = JKBusinessCache.shared.getItem(id: placeId)
+            if place != nil {
+                JKMediator.fetchBusinessStocks(id: placeId, success: { (stocks) in
+                    self.place?.categories = stocks
+                    if let menuViewController = self.menuViewController {
+                        menuViewController.place = self.place
+                    }
+                }, failure: {})
+            }
         }
     }
     
@@ -57,9 +65,8 @@ class PlaceViewController: UIViewController {
         if let place = place {
             menuViewController?.place = place
         }
-        if JKSession.shared.order == nil {
-            orderButton?.isUserInteractionEnabled = false
-        }
+        
+        JKSession.shared.order = JKBuildOrder.init(pickupDate: Date())
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,16 +78,13 @@ class PlaceViewController: UIViewController {
     }
     
     @IBAction func orderTapped(_ sender: Any) {
-        guard let source = menuViewController?.source else {
-            return
-        }
-        var orders: [ATableViewRow] = []
-        
-        for item in source {
-            if let product = item.object as? JKProduct, product.orderCount != 0 {
-                orders.append(item)
-            }
-        }
+//        var orders: [ATableViewRow] = []
+//
+//        for item in source {
+//            if let product = item.object as? JKProduct, product.orderCount != 0 {
+//                orders.append(item)
+//            }
+//        }
         
         guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
             return
@@ -167,31 +171,23 @@ extension PlaceViewController: ATableViewScrollDelegate {
 extension PlaceViewController: ModifyOrderDelegate {
     
     func addItem(item: JKProduct) {
-        let category = DataGenerator.shared.foodCategories[item.category]
-        
-        if JKSession.shared.order?.categories[category] == nil {
-            JKSession.shared.order?.categories[category] = Array()
+        if let order = JKSession.shared.order {
+            let productOrder = JKProductOrder.init(product: item)
+            if order.products[item.id] == nil {
+                order.products[item.id] = [:]
+            }
+            order.products[item.id]?[productOrder.orderId] = productOrder
         }
-        
-        guard let products = JKSession.shared.order?.categories[category] else {
-            return
-        }
-        JKSession.shared.order?.categories[category] = products.filter{$0.id != item.id}
-        
-        JKSession.shared.order?.categories[category]?.append(item)
     }
     
     func removeItem(item: JKProduct) {
-        let category = DataGenerator.shared.foodCategories[item.category]
-        
-        guard let products = JKSession.shared.order?.categories[category] else {
-            return
-        }
-
-        JKSession.shared.order?.categories[category] = products.filter{$0.id != item.id}
-        if let count = JKSession.shared.order?.categories[category]?.count,
-            count == 0 {
-            JKSession.shared.order?.categories.removeValue(forKey: category)
+        if let order = JKSession.shared.order, let items = order.products[item.id] {
+            if items.count > 1, let index = order.products[item.id]?.first?.value.orderId {
+                order.products[item.id]?.removeValue(forKey: index)
+            } else {
+                order.products.removeValue(forKey: item.id)
+            }
         }
     }
+    
 }

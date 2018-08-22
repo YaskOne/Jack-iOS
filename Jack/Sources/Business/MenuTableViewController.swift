@@ -161,7 +161,6 @@ class ProductOrderCell: UITableViewCell {
     
     var orderCount: Int = 0 {
         didSet {
-            product?.orderCount = orderCount
             countLabel.text = "x\(orderCount)"
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ArtUtilities
 
 class OrderOverviewViewController: UIViewController {
     
@@ -25,14 +26,27 @@ class OrderOverviewViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "OrderOverviewSegue") {
             orderOverviewViewController = segue.destination as? OrderOverviewTableViewController
-            orderOverviewViewController?.rawSource = JKSession.shared.order?.categories ?? [:]
+            orderOverviewViewController?.rawSource = JKSession.shared.order?.extendedProducts ?? []
         }
     }
 
     @IBAction func finalizeOrderTapped(_ sender: Any) {
-        dismiss(animated: true, completion: {
-            // send request
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+        
+        JKMediator.createOrder(
+            retrieveDate: JKSession.shared.order!.pickupDate,
+            productIds: Array<UInt>(JKSession.shared.order!.extendedProducts.map{$0.id}),
+            userId: 1,
+            businessId: JKSession.shared.order!.restaurantId,
+            success: {_ in
+                print("Success")
+        },
+            failure: {
+                print("Error")
         })
+        
+        self.present(controller, animated: true, completion: nil)
     }
     
 }

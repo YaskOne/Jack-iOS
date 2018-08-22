@@ -56,6 +56,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5u-44-BPV">
+                                <rect key="frame" x="137" y="492" width="100" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.38059494897227708" blue="0.39657821531307169" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ZDF-H9-1rW"/>
+                                    <constraint firstAttribute="height" constant="40" id="xsX-Qk-qfc"/>
+                                </constraints>
+                                <color key="tintColor" red="0.89532439720000001" green="0.86125665549999997" blue="0.37165747090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="registerClicked:" destination="2c4-JZ-rTl" eventType="touchUpInside" id="z0a-zk-rqe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941179999999" green="0.40784313729999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,7 +77,9 @@
                             <constraint firstItem="ZAV-fm-xM5" firstAttribute="centerY" secondItem="qs2-Tq-3hY" secondAttribute="centerY" id="E0L-tT-CxK"/>
                             <constraint firstItem="ZAV-fm-xM5" firstAttribute="top" secondItem="JxH-KL-J2O" secondAttribute="bottom" constant="30.5" id="MAn-Bp-8Xf"/>
                             <constraint firstItem="XlT-U8-GXv" firstAttribute="top" secondItem="9Pi-lj-987" secondAttribute="bottom" constant="60" id="RyZ-nq-aXq"/>
+                            <constraint firstItem="D5u-44-BPV" firstAttribute="centerX" secondItem="qs2-Tq-3hY" secondAttribute="centerX" id="cXV-CU-3p6"/>
                             <constraint firstItem="ZAV-fm-xM5" firstAttribute="centerX" secondItem="qs2-Tq-3hY" secondAttribute="centerX" id="f88-fs-39o"/>
+                            <constraint firstItem="9Pi-lj-987" firstAttribute="top" secondItem="D5u-44-BPV" secondAttribute="bottom" constant="20" id="v4Y-On-RcS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G7F-mT-Qq4"/>
                     </view>

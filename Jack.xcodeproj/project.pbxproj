@@ -12,6 +12,9 @@
 		D7C00FA020EE7D1100072A54 /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7C00FA720EE839500072A54 /* JKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00FA620EE839500072A54 /* JKLocationManager.swift */; };
 		D7C00FA920EE83E400072A54 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7C00FA820EE83E400072A54 /* Podfile */; };
+		D7D7C3922119AAEA008DF2DF /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7C3912119AAEA008DF2DF /* Auth.storyboard */; };
+		D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3932119AC11008DF2DF /* APageViewController.swift */; };
+		D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */; };
 		D7DCF5A320EE728900469751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A220EE728900469751 /* AppDelegate.swift */; };
 		D7DCF5A520EE728900469751 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A420EE728900469751 /* StartViewController.swift */; };
 		D7DCF5A820EE728900469751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A620EE728900469751 /* Main.storyboard */; };
@@ -19,7 +22,6 @@
 		D7DCF5AD20EE728A00469751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5AB20EE728A00469751 /* LaunchScreen.storyboard */; };
 		D7DCF5B820EE728A00469751 /* JackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5B720EE728A00469751 /* JackTests.swift */; };
 		D7DCF5C320EE728A00469751 /* JackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5C220EE728A00469751 /* JackUITests.swift */; };
-		D7DCF5DE20EE78A500469751 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DB20EE78A500469751 /* PriceLabel.swift */; };
 		D7DCF5DF20EE78A500469751 /* JKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DC20EE78A500469751 /* JKButton.swift */; };
 		D7DCF5E020EE78A500469751 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DD20EE78A500469751 /* CountLabel.swift */; };
 		D7DCF5EC20EE78B500469751 /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5EA20EE78B500469751 /* JKSession.swift */; };
@@ -66,8 +68,6 @@
 		D7DCF63F20EE78DA00469751 /* MissingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62D20EE78DA00469751 /* MissingImage@3x.png */; };
 		D7DCF64020EE78DA00469751 /* Jack_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62E20EE78DA00469751 /* Jack_logo@2x.png */; };
 		D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64120EE78E700469751 /* DataGenerator.swift */; };
-		D7DCF64620EE78E800469751 /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64220EE78E700469751 /* JKCache.swift */; };
-		D7DCF64720EE78E800469751 /* JKImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64320EE78E700469751 /* JKImageLoader.swift */; };
 		D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64420EE78E700469751 /* JKNavigationController.swift */; };
 		D7DCF64A20EE78FE00469751 /* jackfont2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF64920EE78FE00469751 /* jackfont2.ttf */; };
 		D7F8822520F3AA6B00B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; };
@@ -157,6 +157,9 @@
 		D7C00F9620EE7CD700072A54 /* ArtUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArtUtilities.xcodeproj; path = ../ArtUtilities/ArtUtilities.xcodeproj; sourceTree = "<group>"; };
 		D7C00FA620EE839500072A54 /* JKLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKLocationManager.swift; sourceTree = "<group>"; };
 		D7C00FA820EE83E400072A54 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D7D7C3912119AAEA008DF2DF /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		D7D7C3932119AC11008DF2DF /* APageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APageViewController.swift; sourceTree = "<group>"; };
+		D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D7DCF59F20EE728900469751 /* Jack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DCF5A220EE728900469751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7DCF5A420EE728900469751 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +173,6 @@
 		D7DCF5BE20EE728A00469751 /* JackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DCF5C220EE728A00469751 /* JackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackUITests.swift; sourceTree = "<group>"; };
 		D7DCF5C420EE728A00469751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7DCF5DB20EE78A500469751 /* PriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
 		D7DCF5DC20EE78A500469751 /* JKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKButton.swift; sourceTree = "<group>"; };
 		D7DCF5DD20EE78A500469751 /* CountLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountLabel.swift; sourceTree = "<group>"; };
 		D7DCF5EA20EE78B500469751 /* JKSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKSession.swift; sourceTree = "<group>"; };
@@ -217,8 +219,6 @@
 		D7DCF62D20EE78DA00469751 /* MissingImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MissingImage@3x.png"; sourceTree = "<group>"; };
 		D7DCF62E20EE78DA00469751 /* Jack_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo@2x.png"; sourceTree = "<group>"; };
 		D7DCF64120EE78E700469751 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
-		D7DCF64220EE78E700469751 /* JKCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKCache.swift; sourceTree = "<group>"; };
-		D7DCF64320EE78E700469751 /* JKImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKImageLoader.swift; sourceTree = "<group>"; };
 		D7DCF64420EE78E700469751 /* JKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKNavigationController.swift; sourceTree = "<group>"; };
 		D7DCF64920EE78FE00469751 /* jackfont2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont2.ttf; sourceTree = "<group>"; };
 		D7F8821A20F3AA5800B2F7EE /* JackModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JackModel.xcodeproj; path = ../JackModel/JackModel.xcodeproj; sourceTree = "<group>"; };
@@ -280,6 +280,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D7D7C38E2119AAC8008DF2DF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D7D7C3912119AAEA008DF2DF /* Auth.storyboard */,
+				D7D7C3932119AC11008DF2DF /* APageViewController.swift */,
+				D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		D7DCF59620EE728900469751 = {
 			isa = PBXGroup;
 			children = (
@@ -309,8 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				D7DCF64120EE78E700469751 /* DataGenerator.swift */,
-				D7DCF64220EE78E700469751 /* JKCache.swift */,
-				D7DCF64320EE78E700469751 /* JKImageLoader.swift */,
 				D7DCF64420EE78E700469751 /* JKNavigationController.swift */,
 				D7DCF5D120EE729F00469751 /* Ressources */,
 				D7DCF5D020EE729200469751 /* Sources */,
@@ -345,6 +353,7 @@
 		D7DCF5D020EE729200469751 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D7D7C38E2119AAC8008DF2DF /* Auth */,
 				D7F8822B20F3AD5200B2F7EE /* Network */,
 				D7DCF5D920EE735900469751 /* Views */,
 				D7DCF5D720EE72FB00469751 /* Utils */,
@@ -456,7 +465,6 @@
 			children = (
 				D7DCF5DD20EE78A500469751 /* CountLabel.swift */,
 				D7DCF5DC20EE78A500469751 /* JKButton.swift */,
-				D7DCF5DB20EE78A500469751 /* PriceLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -652,6 +660,7 @@
 				D7DCF63C20EE78DA00469751 /* MissingImage@2x.png in Resources */,
 				D7DCF63720EE78DA00469751 /* marker_white_120x105@3x.png in Resources */,
 				D7DCF63B20EE78DA00469751 /* Jack_logo.png in Resources */,
+				D7D7C3922119AAEA008DF2DF /* Auth.storyboard in Resources */,
 				D7DCF61020EE78C600469751 /* JKMarkerInfoView.xib in Resources */,
 				D7DCF5FE20EE78BE00469751 /* Place.storyboard in Resources */,
 				D7DCF5FC20EE78BE00469751 /* ProductCell.xib in Resources */,
@@ -727,11 +736,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7DCF61920EE78CD00469751 /* UserProfileViewController.swift in Sources */,
-				D7DCF5DE20EE78A500469751 /* PriceLabel.swift in Sources */,
 				D7F8822E20F3AD9500B2F7EE /* JKMediator.swift in Sources */,
 				D7DCF61420EE78C600469751 /* JKMarkerView.swift in Sources */,
 				D7DCF61120EE78C600469751 /* MapViewController.swift in Sources */,
 				D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */,
+				D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */,
 				D7C00FA720EE839500072A54 /* JKLocationManager.swift in Sources */,
 				D7DCF60620EE78BE00469751 /* ProductOverviewViewController.swift in Sources */,
 				D7DCF5A520EE728900469751 /* StartViewController.swift in Sources */,
@@ -742,12 +751,11 @@
 				D7DCF5EC20EE78B500469751 /* JKSession.swift in Sources */,
 				D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */,
 				D7DCF61B20EE78CD00469751 /* PickTimeViewController.swift in Sources */,
-				D7DCF64720EE78E800469751 /* JKImageLoader.swift in Sources */,
 				D7DCF5DF20EE78A500469751 /* JKButton.swift in Sources */,
 				D7DCF60020EE78BE00469751 /* OrderTableViewController.swift in Sources */,
 				D7DCF5FF20EE78BE00469751 /* PlaceViewController.swift in Sources */,
+				D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */,
 				D7DCF5A320EE728900469751 /* AppDelegate.swift in Sources */,
-				D7DCF64620EE78E800469751 /* JKCache.swift in Sources */,
 				D7DCF60520EE78BE00469751 /* MenuTableViewController.swift in Sources */,
 				D7DCF5E020EE78A500469751 /* CountLabel.swift in Sources */,
 				D7DCF5FB20EE78BE00469751 /* OrderOverviewTableViewController.swift in Sources */,
@@ -941,7 +949,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = Jack/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -958,7 +969,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = Jack/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -973,7 +987,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -989,7 +1007,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JackTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1004,7 +1026,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1019,7 +1045,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JackUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -44,12 +44,16 @@ class JKNetwork {
                 do {
                     var json = try JSON(data: response.data!)
                 
-//                    print(json)
+                    print("MEDIATOR: ---- Success")
+                    print(json)
 //                    print(json["places"][0])
 //                    print(json["places"][0]["CreatedAt"])
                     success(json)
                 } catch {
-                    
+                    print("MEDIATOR: ---- Error")
+
+                    print(response)
+//                    print(response.data)
                 }
             }
         
