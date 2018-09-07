@@ -23,17 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="522" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3E-MU-wHx">
-                                <rect key="frame" x="0.0" y="0.0" width="380.5" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quK-qS-AaZ" customClass="CountLabel" customModule="Jack" customModuleProvider="target">
-                                <rect key="frame" x="380.5" y="0.0" width="43.5" height="43.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="quK-qS-AaZ" secondAttribute="height" multiplier="1:1" id="hOy-Ht-h3B"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="424" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,14 +40,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="quK-qS-AaZ" firstAttribute="leading" secondItem="y3E-MU-wHx" secondAttribute="trailing" id="1l6-dl-bSs"/>
+                            <constraint firstItem="fO1-bh-njN" firstAttribute="leading" secondItem="y3E-MU-wHx" secondAttribute="trailing" id="D3t-H4-XC1"/>
                             <constraint firstAttribute="bottom" secondItem="y3E-MU-wHx" secondAttribute="bottom" id="E6s-ij-z7X"/>
-                            <constraint firstItem="fO1-bh-njN" firstAttribute="leading" secondItem="quK-qS-AaZ" secondAttribute="trailing" id="H9z-qV-Tye"/>
                             <constraint firstAttribute="bottom" secondItem="fO1-bh-njN" secondAttribute="bottom" id="IGc-Pi-Bif"/>
                             <constraint firstItem="y3E-MU-wHx" firstAttribute="leading" secondItem="x0M-GN-EDA" secondAttribute="leading" id="UaR-y7-ypx"/>
-                            <constraint firstItem="quK-qS-AaZ" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="Uec-tn-7YJ"/>
                             <constraint firstItem="fO1-bh-njN" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="f4o-8h-T5R"/>
-                            <constraint firstAttribute="bottom" secondItem="quK-qS-AaZ" secondAttribute="bottom" id="i78-mo-MIp"/>
                             <constraint firstAttribute="trailing" secondItem="fO1-bh-njN" secondAttribute="trailing" id="kqe-sI-f4i"/>
                             <constraint firstItem="y3E-MU-wHx" firstAttribute="top" secondItem="x0M-GN-EDA" secondAttribute="top" id="zJR-Nh-LLa"/>
                         </constraints>
@@ -72,7 +59,6 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="countLabel" destination="quK-qS-AaZ" id="m80-N9-dVy"/>
                 <outlet property="nameLabel" destination="y3E-MU-wHx" id="gWL-fQ-obs"/>
                 <outlet property="priceView" destination="fO1-bh-njN" id="P3G-qV-0OB"/>
             </connections>

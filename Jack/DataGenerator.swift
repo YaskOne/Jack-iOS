@@ -131,7 +131,7 @@ class DataGenerator {
     ]
 
     lazy var places: [Int: JKBusiness] = {
-        return placesGenerator()
+        return [:]
     }()
     
     var locations: [JKLocation] {
@@ -140,29 +140,6 @@ class DataGenerator {
     
     init() {
         
-    }
-    
-    // 49.7 / 0.8
-    // 47.7 / 4.3
-    func placesGenerator() -> [Int: JKBusiness] {
-        var places: [Int: JKBusiness] = [:]
-        
-        var i: Int = 0
-//        while i < 10000 {
-//            let lat = drand48() * 2 + 47.7
-//            let lng = drand48() * 3.5 + 0.8
-//            let url = urls[Int(arc4random_uniform(UInt32(urls.count)))]
-//            let name = names[Int(arc4random_uniform(UInt32(names.count)))]
-//            let type = category[Int(arc4random_uniform(UInt32(descriptions.count)))]
-//            let description = descriptions[Int(arc4random_uniform(UInt32(descriptions.count)))]
-//            let id = i
-//            
-//            let location = JKLocation.init(id: id, lat: lat, lng: lng, url: url, name: name, type: type)
-//
-//            i=i+1;
-//            places[id] = JKBusiness.init(location: location, categories: categories, description: description)
-//        }
-        return places
     }
     
     func locationsInBoundaries(lat1: Double, lng1: Double, lat2: Double, lng2: Double) -> Array<JKLocation> {

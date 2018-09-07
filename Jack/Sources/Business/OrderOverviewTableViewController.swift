@@ -99,7 +99,6 @@ class OrderOverviewCell: UITableViewCell {
         didSet {
             if let product = product {
                 nameLabel?.text = product.name
-//                countLabel?.count = product.orderCount
                 priceView?.price = product.price
             }
         }

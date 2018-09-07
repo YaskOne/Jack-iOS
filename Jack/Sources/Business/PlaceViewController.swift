@@ -10,12 +10,13 @@ import UIKit
 import ArtUtilities
 import JackModel
 
-class PlaceViewController: UIViewController {
+class PlaceViewController: APresenterViewController {
     
     @IBOutlet weak var navBar: UIView!
     @IBOutlet weak var navBackground: UIView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var orderButton: JKButton?
+    @IBOutlet weak var orderButton: AUButton?
+    @IBOutlet weak var countdownView: CountdownView?
     
     @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
     
@@ -26,7 +27,7 @@ class PlaceViewController: UIViewController {
 //    }
     
     lazy var popController = {
-        return APopoverViewController()
+        return AUPopoverViewController()
     }()
     
     var placeId: UInt = 0 {
@@ -59,14 +60,30 @@ class PlaceViewController: UIViewController {
         setUp()
         nameLabel?.text = place?.location.name ?? ""
         safeAreaTopConstraint.constant = UIApplication.shared.statusBarFrame.height
+        countdownView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(dateTapped)))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     func setUp() {
         if let place = place {
             menuViewController?.place = place
+            countdownView?.value = JKSession.shared.order!.pickupDate.minutesSinceNow()
+        }
+    }
+    
+    @objc func dateTapped() {
+        guard let pvc = homeStoryboard.instantiateViewController(withIdentifier: "PickTimeViewController") as? PickTimeViewController else {
+            return
         }
         
-        JKSession.shared.order = JKBuildOrder.init(pickupDate: Date())
+        pvc.modalPresentationStyle = UIModalPresentationStyle.custom
+        pvc.transitioningDelegate = self
+        pvc.delegate = self
+        
+        self.present(pvc, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,21 +95,22 @@ class PlaceViewController: UIViewController {
     }
     
     @IBAction func orderTapped(_ sender: Any) {
-//        var orders: [ATableViewRow] = []
-//
-//        for item in source {
-//            if let product = item.object as? JKProduct, product.orderCount != 0 {
-//                orders.append(item)
-//            }
-//        }
-        
-        guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
-            return
+        if let _ = JKSession.shared.user {
+            guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
+                return
+            }
+            
+            popController.setUp(view: view, frame: view.frame, controller: controller)
+            controller.delegate = self
+            
+            self.present(popController, animated: true, completion: nil)
+        } else {
+            guard let controller = authStoryboard.instantiateViewController(withIdentifier: "AuthentificationViewController") as? AuthentificationViewController else {
+                return
+            }
+            
+            self.navigationController?.pushViewController(controller, animated: true)
         }
-        
-        popController.setUp(view: view, frame: view.frame, controller: controller)
-        
-        self.present(popController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -133,6 +151,15 @@ class PlaceViewController: UIViewController {
             self.timer?.invalidate()
         }
     }
+}
+
+extension PlaceViewController: TimePickerDelegate {
+
+    func timePicked(date: Date) {
+        JKSession.shared.order?.pickupDate = date
+        setUp()
+    }
+
 }
 
 extension PlaceViewController: ATableViewScrollDelegate {
@@ -190,4 +217,10 @@ extension PlaceViewController: ModifyOrderDelegate {
         }
     }
     
+}
+
+extension PlaceViewController: OrderCompletedDelegate {
+    func orderCompleted() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

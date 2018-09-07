@@ -15,12 +15,12 @@ class OrderViewController: UIViewController {
     var orderViewController: OrderTableViewController?
 
     @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var orderButton: JKButton!
+    @IBOutlet weak var orderButton: AUButton!
     
     @IBOutlet weak var nameLabel: UILabel?
     
     lazy var popController = {
-        return APopoverViewController()
+        return AUPopoverViewController()
     }()
 
     var place: JKBusiness? {
@@ -47,17 +47,6 @@ class OrderViewController: UIViewController {
     }
 
     @IBAction func orderButtonTapped(_ sender: Any) {
-        guard let source = orderViewController?.source else {
-            return
-        }
-//        var orders: [ATableViewRow] = []
-        
-//        for item in source {
-//            if let product = item.object as? JKProduct, product.orderCount != 0 {
-//                orders.append(item)
-//            }
-//        }
-//
         guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
             return
         }

@@ -8,171 +8,105 @@
 
 import UIKit
 import ArtUtilities
-import JackModel
 
-let mapTappedNotification = Notification.Name("mapTappedNotification")
-let openLocationNotification = Notification.Name("openLocationNotification")
-let openLocationOverviewNotification = Notification.Name("openLocationOverviewNotification")
+let changePageNotification = Notification.Name("changePageNotification")
 
-class HomeViewController: APresenterViewController {
+class HomeViewController: UIViewController {
     
-    @IBOutlet weak var mapContainer: UIView!
+    @IBOutlet weak var statsButton: UIButton!
+    @IBOutlet weak var dashboardButton: UIButton!
+    @IBOutlet weak var shopButton: UIButton!
     
-    @IBOutlet weak var safeArea: UIView!
-    @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var pickTimeButton: JKButton!
-    
-    @IBOutlet weak var pickupTimeLabel: UILabel!
-    @IBOutlet weak var pickupTimeContainer: UIView!
-    
-    var hasSelectedPickupTime: Bool {
-        get {
-            return JKSession.shared.order?.pickupDate != nil
-        }
-        set {
-            pickupTimeContainer.isUserInteractionEnabled = newValue
-            pickupTimeContainer.alpha = newValue ? 1 : 0
-            pickTimeButton.isUserInteractionEnabled = !newValue
-            pickTimeButton.alpha = !newValue ? 1 : 0
+    var menu: [UIButton] {
+        return [
+            statsButton,
+            dashboardButton,
+            shopButton,
+        ]
+    }
+    var currentPage: Int = 0 {
+        didSet {
+            menu[oldValue].isSelected = false
+            menu[currentPage].isSelected = true
+            pageViewController?.currentIndex = currentPage
         }
     }
     
-    var mapController: MapViewController?
+    var pageViewController: AUPageViewController? {
+        didSet {
+            pageViewController?.pageDelegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // init location manager singleton
-        JKLocationManager.shared.setUp()
-        JKLocationManager.shared.delegate = self
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        safeAreaTopConstraint.constant = UIApplication.shared.statusBarFrame.height
-        
-        registerNotifications()
+        topConstraint.constant = UIApplication.shared.statusBarFrame.height
+        currentPage = 1
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pageChangedHandler), name: changePageNotification, object: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? MapViewController,
-            segue.identifier == "MapSegue" {
-            mapController = vc
-        }
-    }
-    
-    @IBAction func locateUserTapped(_ sender: Any) {
-        if let location = JKLocationManager.shared.lastLocation {
-            mapController?.flyToLocation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
-        }
-    }
-    
-    @IBAction func compassTapped(_ sender: Any) {
-        mapController?.normalizeDirection()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    @objc func mapTapped(notif: Notification) {
-    }
-    
-    @objc func openLocation(notif: Notification) {
-        if let id = notif.userInfo?["id"] as? UInt {
-            guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "PlaceViewController") as? PlaceViewController else {
-                return
-            }
-            controller.placeId = id
-            navigationController?.pushViewController(controller, animated: true)
-        }
-    }
-    
-    @objc func openLocationOverview(notif: Notification) {
-        if let id = notif.userInfo?["id"] as? UInt {
-            guard let controller = homeStoryboard.instantiateViewController(withIdentifier: "PlaceOverviewViewController") as? PlaceOverviewViewController else {
-                return
-            }
-            
-            controller.modalPresentationStyle = UIModalPresentationStyle.custom
-            controller.transitioningDelegate = self
-            
-            controller.placeId = id
-            self.present(controller, animated: true, completion: nil)
-        }
-    }
-    @IBAction func cancelPickupTimeTapped(_ sender: Any) {
-        JKSession.shared.order = nil
-        hasSelectedPickupTime = false
-    }
-    
-    @IBAction func choosePickupItemTapped(_ sender: Any) {
         
-        guard let controller = homeStoryboard.instantiateViewController(withIdentifier: "PickTimeViewController") as? PickTimeViewController else {
+        if segue.identifier == "HomePageViewController" {
+            if let pageController = segue.destination as? AUPageViewController {
+                self.pageViewController = pageController
+                pageViewController?.removeSwipeGesture()
+                pageViewController?.pages = [
+                    homeStoryboard.instantiateViewController(withIdentifier: "OrdersViewController"),
+                    homeStoryboard.instantiateViewController(withIdentifier: "MapViewController"),
+                    homeStoryboard.instantiateViewController(withIdentifier: "UserProfileViewController")
+                ]
+                pageViewController?.currentIndex = 1
+            }
+        }
+    }
+    
+    @IBAction func statsTapped(_ sender: Any) {
+        if !userLogged() {
             return
         }
-        
-        controller.modalPresentationStyle = UIModalPresentationStyle.custom
-        controller.transitioningDelegate = self
-        controller.delegate = self
-        
-        self.present(controller, animated: true, completion: nil)
-//        if !isPickingTime {
-//            UIView.animate(withDuration: 0.35, animations: {
-//                self.isPickingTime = true
-//            }) { finished in
-//            }
-//        }
-//        else {
-//
-//        }
+        currentPage = 0
     }
     
-    @IBAction func profileButtonTapped(_ sender: Any) {
-        let pvc = homeStoryboard.instantiateViewController(withIdentifier: "UserProfileViewController") as UIViewController
-        
-        pvc.modalPresentationStyle = UIModalPresentationStyle.custom
-        pvc.transitioningDelegate = self
-        pvc.view.backgroundColor = UIColor.red
-        
-        self.present(pvc, animated: true, completion: nil)
+    @IBAction func dashboardTapped(_ sender: Any) {
+        currentPage = 1
     }
-}
-
-extension HomeViewController {
     
-    func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(mapTapped), name: mapTappedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(openLocation), name: openLocationNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(openLocationOverview), name: openLocationOverviewNotification, object: nil)
+    @IBAction func shopTapped(_ sender: Any) {
+        if !userLogged() {
+            return
+        }
+        currentPage = 2
     }
-
-    func unregisterNotifications() {
-        NotificationCenter.default.removeObserver(self, name: mapTappedNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: openLocationNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: openLocationOverviewNotification, object: nil)
+    
+    func userLogged() -> Bool {
+        if let _ = JKSession.shared.user {
+            return true
+        } else {
+            if let controller = authStoryboard.instantiateViewController(withIdentifier: "AuthentificationViewController") as? AuthentificationViewController {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+        return false
+    }
+    
+    @objc func pageChangedHandler(notif: Notification) {
+        if let page = notif.userInfo?["page"] as? Int {
+            currentPage = page
+        }
     }
 }
 
-extension HomeViewController: JKLocationManagerProtocol {
-    func userLocationChanged() {
-        JKSession.shared.lastPos = JKLocationManager.shared.lastLocation
-    }
-}
-
-extension HomeViewController: TimePickerDelegate {
-    func timePicked(date: Date) {
-        let timeIntervalSinceNow = date.timeIntervalSinceNow
-        let hoursSinceNow = Int(timeIntervalSinceNow / 3600)
-        let minutesSinceNow = Int((Int(timeIntervalSinceNow) - (hoursSinceNow * 3600)) / 60)
-
-        pickupTimeLabel.text = "Restaurants disponibles dans \(hoursSinceNow)h\(minutesSinceNow)"
-        hasSelectedPickupTime = true
-
-        JKSession.shared.order = JKBuildOrder.init(pickupDate: date)
+extension HomeViewController: AUPageViewControllerDelegate {
+    func pageChanged(index: Int) {
     }
 }

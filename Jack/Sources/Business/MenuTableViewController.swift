@@ -39,13 +39,13 @@ class MenuTableViewController: ATableViewController {
     override var cellHeights: [ARowType: CGFloat] {
         return [
             .header: 250,
-            .section: 40,
+            .section: 50,
             .row: 70,
         ]
     }
     
     lazy var popController = {
-        return APopoverViewController()
+        return AUPopoverViewController()
     }()
     
     var place: JKBusiness? {
@@ -56,15 +56,15 @@ class MenuTableViewController: ATableViewController {
         }
     }
     
-    var menu: [JKCategory: [JKProduct]] = [:] {
+    var menu: [UInt: [UInt]] = [:] {
         didSet {
             var section = 0
             source = []
             source.append(ATableViewRow.init(type: .header, section: -1, object: nil))
             for item in menu {
-                source.append(ATableViewRow.init(type: .section, section: section, object: ATableViewSection.init(name: item.key.name)))
+                source.append(ATableViewRow.init(type: .section, section: section, object: item.key as AnyObject))
                 for product in item.value {
-                    source.append(ATableViewRow.init(type: .row, section: section, object: product))
+                    source.append(ATableViewRow.init(type: .row, section: section, object: product as AnyObject))
                 }
             }
             section += 1
@@ -78,8 +78,8 @@ class MenuTableViewController: ATableViewController {
         
         cell.selectionStyle = .none
         
-        if let cell = cell as? ProductOrderCell, let product = item.object as? JKProduct {
-            cell.product = product
+        if let cell = cell as? ProductOrderCell, let id = item.object as? UInt {
+            cell.product = JKProductCache.shared.getItem(id: id)
             cell.delegate = delegate
         }
         return cell
@@ -109,8 +109,8 @@ class MenuTableViewController: ATableViewController {
         cell.selectionStyle = .none
         cell.isUserInteractionEnabled = false
         
-        if let cell = cell as? CategoryCell, let object = item.object as? ATableViewSection {
-            cell.titleLabel?.text = object.name
+        if let cell = cell as? CategoryCell, let id = item.object as? UInt {
+            cell.titleLabel?.text = JKCategoryCache.shared.getItem(id: id)?.name
         }
         
         return cell
@@ -141,6 +141,7 @@ class ProductOrderCell: UITableViewCell {
     
     var product: JKProduct? {
         didSet {
+            clearFields()
             nameLabel?.text = product?.name ?? ""
             priceLabel?.price = product?.price ?? 0
             if let url = product?.url {
@@ -163,6 +164,12 @@ class ProductOrderCell: UITableViewCell {
         didSet {
             countLabel.text = "x\(orderCount)"
         }
+    }
+    
+    func clearFields() {
+        productImageView?.image = nil
+        nameLabel?.text = nil
+        priceLabel?.text = nil
     }
     
     @IBAction func addItemTapped(_ sender: Any) {

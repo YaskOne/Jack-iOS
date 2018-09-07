@@ -22,7 +22,7 @@ class PickTimeViewController: APresentableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timePicker.minimumDate = Date()
+        timePicker.minimumDate = Date().dateInMinutes(10)
     }
     
     @IBAction func validateTapped(_ sender: Any) {

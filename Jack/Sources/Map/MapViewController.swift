@@ -2,115 +2,191 @@
 //  MapViewController.swift
 //  Jack
 //
-//  Created by Arthur Ngo Van on 06/06/2018.
+//  Created by Arthur Ngo Van on 8/29/18.
 //  Copyright © 2018 Arthur Ngo Van. All rights reserved.
 //
 
 import UIKit
-import GoogleMaps
+import ArtUtilities
+import JackModel
 
-class MapViewController: UIViewController {
+let mapTappedNotification = Notification.Name("mapTappedNotification")
+let openLocationNotification = Notification.Name("openLocationNotification")
+let openLocationOverviewNotification = Notification.Name("openLocationOverviewNotification")
+
+class MapViewController: APresenterViewController {
     
-    var mapView: GMSMapView?
+    @IBOutlet weak var mapContainer: UIView!
     
-    let geocoder = GMSGeocoder()
+    @IBOutlet weak var safeArea: UIView!
+    @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
     
-    var markersManager: MarkersManager?
+    @IBOutlet weak var pickTimeButton: AUButton!
+    
+    @IBOutlet weak var pickupTimeLabel: UILabel!
+    @IBOutlet weak var pickupTimeContainer: UIView!
+    
+    var hasSelectedPickupTime: Bool {
+        get {
+            return JKSession.shared.order?.pickupDate != nil
+        }
+        set {
+            pickupTimeContainer.isUserInteractionEnabled = newValue
+            pickupTimeContainer.alpha = newValue ? 1 : 0
+            pickTimeButton.isUserInteractionEnabled = !newValue
+            pickTimeButton.alpha = !newValue ? 1 : 0
+        }
+    }
+    
+    var mapController: GoogleMapViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // init location manager singleton
+        JKLocationManager.shared.setUp()
+        JKLocationManager.shared.delegate = self
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        safeAreaTopConstraint.constant = UIApplication.shared.statusBarFrame.height
+        registerNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //        unregisterNotifications()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    override func loadView() {
-        let camera = GMSCameraPosition.camera(
-            withLatitude: JKSession.shared.lastPos?.coordinate.latitude ?? 48.861976,
-            longitude: JKSession.shared.lastPos?.coordinate.longitude ?? 2.341345,
-                                              zoom: 14)
-        mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        view = mapView
-        mapView?.delegate = self
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GoogleMapViewController,
+            segue.identifier == "MapSegue" {
+            mapController = vc
+        }
+    }
+    
+    @IBAction func locateUserTapped(_ sender: Any) {
+        if let location = JKLocationManager.shared.lastLocation {
+            mapController?.flyToLocation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+        } else {
+            mapController?.flyToLocation(lat: 48.861976, lng: 2.341345, zoom: 14)
+        }
+    }
+    
+    @IBAction func compassTapped(_ sender: Any) {
+        mapController?.normalizeDirection()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    @objc func mapTapped(notif: Notification) {
+    }
+    
+    @objc func openLocation(notif: Notification) {
+        if let id = notif.userInfo?["id"] as? UInt {
+            guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "PlaceViewController") as? PlaceViewController else {
+                return
+            }
+            JKSession.shared.order = JKBuildOrder.init(pickupDate: Date().dateInMinutes(10), businessId: id)
+            controller.placeId = id
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    @objc func openLocationOverview(notif: Notification) {
+        if let id = notif.userInfo?["id"] as? UInt {
+            guard let controller = homeStoryboard.instantiateViewController(withIdentifier: "PlaceOverviewViewController") as? PlaceOverviewViewController else {
+                return
+            }
+            
+            controller.modalPresentationStyle = UIModalPresentationStyle.custom
+            controller.transitioningDelegate = self
+            
+            controller.placeId = id
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    @IBAction func cancelPickupTimeTapped(_ sender: Any) {
+        JKSession.shared.order = nil
+        hasSelectedPickupTime = false
+    }
+    
+    @IBAction func choosePickupItemTapped(_ sender: Any) {
         
-        markersManager = MarkersManager.init(mapView: mapView!)
+        guard let controller = homeStoryboard.instantiateViewController(withIdentifier: "PickTimeViewController") as? PickTimeViewController else {
+            return
+        }
+        
+        controller.modalPresentationStyle = UIModalPresentationStyle.custom
+        controller.transitioningDelegate = self
+        controller.delegate = self
+        
+        self.present(controller, animated: true, completion: nil)
+        //        if !isPickingTime {
+        //            UIView.animate(withDuration: 0.35, animations: {
+        //                self.isPickingTime = true
+        //            }) { finished in
+        //            }
+        //        }
+        //        else {
+        //
+        //        }
     }
     
-    func flyToLocation(lat: Double, lng: Double, zoom: Float = 14) {
-        mapView?.animate(to: GMSCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: zoom, bearing: 0, viewingAngle: 0))
-    }
-    
-    func normalizeDirection() {
-        mapView?.animate(toBearing: 0)
+    @IBAction func profileButtonTapped(_ sender: Any) {
+        let pvc = homeStoryboard.instantiateViewController(withIdentifier: "UserProfileViewController") as UIViewController
+        
+        pvc.modalPresentationStyle = UIModalPresentationStyle.custom
+        pvc.transitioningDelegate = self
+        pvc.view.backgroundColor = UIColor.red
+        
+        self.present(pvc, animated: true, completion: nil)
     }
 }
 
-extension MapViewController: GMSMapViewDelegate {
+extension MapViewController {
     
-//    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-//    }
-    
-    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
-//        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
-//            guard error == nil else {
-//                return
-//            }
-//
-//            if let result = response?.firstResult() {
-//                let marker = GMSMarker()
-//                marker.position = cameraPosition.target
-//                marker.title = result.lines?[0]
-//                marker.snippet = result.lines?[1]
-//                marker.map = mapView
-//            }
-//        }
+    func registerNotifications() {
+        unregisterNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(mapTapped), name: mapTappedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openLocation), name: openLocationNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openLocationOverview), name: openLocationOverviewNotification, object: nil)
     }
     
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        markersManager?.fetchMarkers(JKBoundaries( mapView.projection.visibleRegion()))
+    func unregisterNotifications() {
+        NotificationCenter.default.removeObserver(self, name: mapTappedNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: openLocationNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: openLocationOverviewNotification, object: nil)
     }
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+}
+
+extension MapViewController: JKLocationManagerProtocol {
+    func userLocationChanged() {
+        JKSession.shared.lastPos = JKLocationManager.shared.lastLocation
+    }
+}
+
+extension MapViewController: TimePickerDelegate {
+    func timePicked(date: Date) {
+        let timeIntervalSinceNow = date.timeIntervalSinceNow
+        let hoursSinceNow = Int(timeIntervalSinceNow / 3600)
+        let minutesSinceNow = Int((Int(timeIntervalSinceNow) - (hoursSinceNow * 3600)) / 60)
         
-        if let marker = marker as? JKMarker {
-            NotificationCenter.default.post(name: openLocationOverviewNotification, object: nil, userInfo: ["id": marker.id])
-        }
-//        // remove color from currently selected marker
-//        if let selectedMarker = self.mapView?.selectedMarker {
-//            (selectedMarker.iconView as? JKMarkerView)?.selected = false
-//        }
-//
-//        // select new marker and make green
-//        self.mapView?.selectedMarker = marker
-//        (marker.iconView as? JKMarkerView)?.selected = true
-//
-//        // tap event handled by delegate
-        return false
+        pickupTimeLabel.text = "Restaurants disponibles dans \(hoursSinceNow)h\(minutesSinceNow)"
+        hasSelectedPickupTime = true
+        
+        //        JKSession.shared.order = JKBuildOrder.init(pickupDate: date, )
     }
-    
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-    }
-    
-    func mapView(_ mapView: GMSMapView, didCloseInfoWindowOf marker: GMSMarker) {
-        (marker.iconView as? JKMarkerView)?.selected = false
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        if let marker = marker as? JKMarker {
-            NotificationCenter.default.post(name: openLocationNotification, object: nil, userInfo: ["id": marker.id])
-        }
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
-    }
-    
-//    func mapView(_ mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-//        let customInfoWindow = JKMarkerInfoView.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 80))
-//        if let marker = marker as? JKMarker {
-//            customInfoWindow.nameLabel.text = marker.location.name
-//            customInfoWindow.descriptionLabel.text = marker.location.type
-//        }
-//        return customInfoWindow
-//    }
 }

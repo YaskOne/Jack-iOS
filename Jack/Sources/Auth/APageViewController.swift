@@ -30,7 +30,7 @@ class APageViewController: UIPageViewController {
     
     func setUp() {
         dataSource = self
-        self
+
         if let firstViewController = pages.first {
             setViewControllers([firstViewController],
                                direction: .forward,
@@ -47,11 +47,7 @@ class APageViewController: UIPageViewController {
 
 extension APageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = indexOfController(viewController) else {
-            return nil
-        }
-        
-        guard index - 1 >= 0 else {
+        guard let index = indexOfController(viewController), index - 1 >= 0 else {
             return nil
         }
         
@@ -59,16 +55,11 @@ extension APageViewController: UIPageViewControllerDataSource, UIPageViewControl
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = indexOfController(viewController) else {
-            return nil
-        }
-        
-        guard index + 1 < pages.count else {
+        guard let index = indexOfController(viewController), index + 1 < pages.count else {
             return nil
         }
         
         return pages[index + 1]
     }
-    
     
 }

@@ -41,25 +41,6 @@ class MarkersManager {
     }
     
     func addMarkers(_ businesses: Array<JKBusiness>) {
-        var businesses = businesses
-//        for (i,location) in businesses.enumerated().reversed() {
-//            if let marker = currentMarkers[location.id] {
-//                if marker.displayed {
-//                    marker.map = mapView
-//                }
-//                marker.keep = true
-//                businesses.remove(at: i)
-//            }
-//        }
-//        for marker in currentMarkers.values {
-//            if !keepOldLocations && !marker.keep {
-//                marker.map = nil
-//                currentMarkers.removeValue(forKey: marker.id)
-//            }
-//            else {
-//                marker.keep = false
-//            }
-//        }
         for business in businesses {
             addMarker(business)
             JKBusinessCache.shared.addObject(id: UInt(business.id), object: business)

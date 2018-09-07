@@ -19,18 +19,23 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        JKNetwork.shared.server = "http://127.0.0.1:3000"
-        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
-    }
-    
-    @IBAction func buttonClick(_ sender: Any) {
+
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFade
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        
         let controller = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController")
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: false)
     }
     
-    @IBAction func registerClicked(_ sender: Any) {
-        let controller = authStoryboard.instantiateViewController(withIdentifier: "APageViewController")
-        navigationController?.pushViewController(controller, animated: true)
-    }
+//    @IBAction func buttonClick(_ sender: Any) {
+//    }
+//
+//    @IBAction func registerClicked(_ sender: Any) {
+//        let controller = authStoryboard.instantiateViewController(withIdentifier: "APageViewController")
+//        navigationController?.pushViewController(controller, animated: true)
+//    }
 }
 

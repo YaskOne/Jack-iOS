@@ -12,7 +12,7 @@ import ArtUtilities
 class JKMarkerView: AView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var imageView: AImageView!
+    @IBOutlet weak var imageView: AUImageView!
     @IBOutlet weak var markerImage: UIImageView!
     
     var selected: Bool = false {

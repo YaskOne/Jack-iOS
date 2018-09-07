@@ -1,0 +1,84 @@
+/*
+ Localizable.strings
+ Jack
+ 
+ Created by Arthur Ngo Van on 9/2/18.
+ Copyright © 2018 Arthur Ngo Van. All rights reserved.
+ */
+
+"jack" = "Jack";
+
+// User fields (MAIN)
+"name_title" = "Nom";
+"surname_title" = "Prénom";
+"email_title" = "Email";
+"password_title" = "Mot de passe";
+"id_title" = "ID";
+
+// Product fields (MAIN)
+"price_title" = "Prix";
+"category_title" = "Catégorie";
+"url_title" = "Url";
+
+// Business fields (MAIN)
+"address_title" = "Adresse";
+"type_title" = "Type";
+"description_title" = "Description";
+
+// GENERAL (MAIN)
+"diconnect_action" = "Se déconnecter";
+"delete_account_action" = "Supprimer le compte";
+"confirm_action" = "Confirmer";
+"validate_action" = "Valider";
+"cancel_action" = "Annuler";
+"confirm_delete_account_title" = "Es-tu sûr de vouloir supprimer ce compte?";
+"instructions_delete_account_title" = "Pour supprimer ton compte tape \"[$name]\" puis valide";
+
+// AUTH (JACK)
+"not_authenticated_title" = "Tu as faim ? Connecte toi ou enregistre toi d’abord.";
+
+"connect_title" = "Se Connecter";
+"connect_action" = "Se Connecter";
+
+"register_title" = "S'enregistrer";
+"register_action" = "S'enregistrer";
+
+// HOME (JACK)
+"orders_title" = "Commandes";
+"map_title" = "Restaurants";
+"profile_title" = "Profil";
+"count_price_title" = "x$count produits, $pricee";
+
+// HOME (JACK BUSINESS)
+"stocks_title" = "Commandes";
+"business_title" = "Magasin";
+
+// BUSINESS (JACK)
+"order_action" = "Commander";
+"order_price_label" = "Total de la commande:";
+"order_pickup_time_label" = "Commande à récupérer dans $minutes minutes";
+"finalize_action" = "Finaliser";
+
+// HOME (JACK BUSINESS)
+"order_preview_title" = "Commande $id";
+"refresh_action" = "Rafraîchir";
+
+"accept_action" = "Accepter";
+"reject_action" = "Rejeter";
+"waiting_action" = "Attente";
+"preparing_action" = "Preparation";
+"ready_action" = "Prêt";
+"delivered_action" = "Délivré";
+"canceled_action" = "Annuler";
+
+"new_category_action" = "Nouvelle catégorie";
+"new_product_action" = "Nouveau produit";
+
+
+"contact_us_title" = "Contactez nous:";
+"cgu_action" = "CGU";
+"edit_profile_action" = "Editer les informations";
+
+"" = "";
+
+

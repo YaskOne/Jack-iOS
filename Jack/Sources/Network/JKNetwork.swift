@@ -11,11 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 class JKNetwork {
-
+    
     static var shared: JKNetwork = JKNetwork()
     
     var server: String?
-
+    
     public func query(path: String, method: HTTPMethod, queue: DispatchQueue = DispatchQueue.main, skipLog: Bool = false, parameters: Parameters? = nil, success: @escaping (JSON) -> Void, failure: @escaping () -> Void) -> String? {
         
         var paramsEncoding: ParameterEncoding = URLEncoding.default
@@ -30,32 +30,30 @@ class JKNetwork {
         var headers = HTTPHeaders()
         headers["Content-Type"] = "application/json"
         headers["Accept"] = "application/json"
+        headers["authorization"] = "allow"
         
-        print(server! + "/" + path)
-        print(parameters?.description)
+        print("----------------------------- Request: \(path)")
+        print("  - parameters: \(String(describing: parameters))")
         Alamofire
             .request(server! + "/" + path, method: method, parameters: parameters, encoding: paramsEncoding, headers: headers)
             .responseJSON { response in
-//                print("---- \(response.request)")  // original URL request
-//                print("---- \(response.response)") // URL response
-//                print("---- \(response.data)")     // server data
-//                print("---- \(response.result)")   // result of response serialization
-
+                
                 do {
                     var json = try JSON(data: response.data!)
-                
-                    print("MEDIATOR: ---- Success")
-                    print(json)
-//                    print(json["places"][0])
-//                    print(json["places"][0]["CreatedAt"])
+                    
+                    if let error = json.dictionaryObject?["error"] {
+                        print("Error: \(path)")
+                        print("  - message: \(error)")
+                    }
+                    else {
+                        print("Success: \(path)")
+                    }
+                    
                     success(json)
                 } catch {
-                    print("MEDIATOR: ---- Error")
-
-                    print(response)
-//                    print(response.data)
+                    failure()
                 }
-            }
+        }
         
         return ""
     }

@@ -97,7 +97,7 @@
                                     <segue destination="cgn-wC-d3T" kind="embed" identifier="OrderOverviewSegue" id="lbc-3B-tp4"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY6-cE-Tpd" customClass="JKButton" customModule="Jack" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY6-cE-Tpd" customClass="AUButton" customModule="ArtUtilities">
                                 <rect key="frame" x="91" y="597" width="192" height="50"/>
                                 <color key="backgroundColor" red="0.67982630079999995" green="0.67982630079999995" blue="0.67982630079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -113,20 +113,23 @@
                                         <real key="value" value="11"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="blured" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stringID" value="finalize_action"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="finalizeOrderTapped:" destination="Ybw-iE-Nr7" eventType="touchUpInside" id="D3i-xS-6JE"/>
-                                    <action selector="orderButtonTapped:" destination="Rys-R7-g2B" eventType="touchUpInside" id="q6I-RT-B4n"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6z-mV-zev">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total de la commande:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-uK-qUh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-uK-qUh" customClass="AULabel" customModule="ArtUtilities">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="40"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="stringID" value="order_price_label"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-eU-J2S" customClass="PriceLabel" customModule="ArtUtilities">
                                         <rect key="frame" x="295" y="0.0" width="80" height="40"/>
@@ -150,7 +153,7 @@
                                     <constraint firstItem="gTm-uK-qUh" firstAttribute="top" secondItem="f6z-mV-zev" secondAttribute="top" id="tWd-Ln-sK9"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nme-gR-Cqj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nme-gR-Cqj" customClass="AULabel" customModule="ArtUtilities">
                                 <rect key="frame" x="0.0" y="40" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="M8A-Pu-wsX"/>
@@ -158,6 +161,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stringID" value="order_pickup_time_label"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52v-LN-KsD">
                                 <rect key="frame" x="0.0" y="80" width="375" height="1"/>
@@ -195,128 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JaR-Rm-ODM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-516" y="-2756.6716641679163"/>
-        </scene>
-        <!--Order View Controller-->
-        <scene sceneID="YKR-AY-AuF">
-            <objects>
-                <viewController storyboardIdentifier="OrderViewController" id="Rys-R7-g2B" customClass="OrderViewController" customModule="Jack" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AL4-9l-ucH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqZ-Ar-4yK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-Mr-vj0">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="617"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="4Iq-VF-IzY" kind="embed" identifier="OrderSegue" id="kj5-8Y-QWQ"/>
-                                        </connections>
-                                    </containerView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-fN-OMO" customClass="AView" customModule="Jack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJt-pu-ntm">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="oJt-pu-ntm" secondAttribute="height" multiplier="1:1" id="Fqd-Bi-JEe"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="jackfont" family="jackfont" pointSize="22"/>
-                                                <state key="normal" title="">
-                                                    <color key="titleColor" red="0.97731443029999998" green="0.98389116060000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="backTapped:" destination="Rys-R7-g2B" eventType="touchUpInside" id="Hiv-FZ-apf"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8V-iL-Spq">
-                                                <rect key="frame" x="60" y="0.0" width="315" height="50"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="U8V-iL-Spq" secondAttribute="trailing" id="57Z-tU-Kxg"/>
-                                            <constraint firstItem="U8V-iL-Spq" firstAttribute="top" secondItem="bgn-fN-OMO" secondAttribute="top" id="E0w-fp-Wzd"/>
-                                            <constraint firstAttribute="bottom" secondItem="U8V-iL-Spq" secondAttribute="bottom" id="FVX-eT-f5K"/>
-                                            <constraint firstItem="oJt-pu-ntm" firstAttribute="leading" secondItem="bgn-fN-OMO" secondAttribute="leading" id="b2F-4V-nwg"/>
-                                            <constraint firstAttribute="height" constant="50" id="nA2-jn-4Rm"/>
-                                            <constraint firstItem="U8V-iL-Spq" firstAttribute="leading" secondItem="oJt-pu-ntm" secondAttribute="trailing" constant="10" id="vhu-dc-vYQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="oJt-pu-ntm" secondAttribute="bottom" id="zOb-B4-bKx"/>
-                                            <constraint firstItem="oJt-pu-ntm" firstAttribute="top" secondItem="bgn-fN-OMO" secondAttribute="top" id="zj6-yq-YMu"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="1" height="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowBlurRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krD-li-ivd" customClass="JKButton" customModule="Jack" customModuleProvider="target">
-                                        <rect key="frame" x="91" y="597" width="192" height="50"/>
-                                        <color key="backgroundColor" red="0.67982630079999995" green="0.67982630079999995" blue="0.67982630079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="GxY-Qx-SJv"/>
-                                            <constraint firstAttribute="width" secondItem="krD-li-ivd" secondAttribute="height" multiplier="23:6" id="P2Y-3G-rwV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="PAYER">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="11"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="blured" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="orderButtonTapped:" destination="Rys-R7-g2B" eventType="touchUpInside" id="YKY-vL-ws6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fdB-Mr-vj0" secondAttribute="bottom" id="5QA-Uc-gbC"/>
-                                    <constraint firstItem="bgn-fN-OMO" firstAttribute="leading" secondItem="YqZ-Ar-4yK" secondAttribute="leading" id="83q-2x-aHO"/>
-                                    <constraint firstItem="fdB-Mr-vj0" firstAttribute="leading" secondItem="YqZ-Ar-4yK" secondAttribute="leading" id="FwG-qC-d37"/>
-                                    <constraint firstAttribute="bottom" secondItem="krD-li-ivd" secondAttribute="bottom" constant="20" id="IXu-WA-lyc"/>
-                                    <constraint firstItem="fdB-Mr-vj0" firstAttribute="top" secondItem="bgn-fN-OMO" secondAttribute="bottom" id="IYM-KM-LRy"/>
-                                    <constraint firstAttribute="trailing" secondItem="fdB-Mr-vj0" secondAttribute="trailing" id="Nvs-k4-oPo"/>
-                                    <constraint firstItem="krD-li-ivd" firstAttribute="centerX" secondItem="YqZ-Ar-4yK" secondAttribute="centerX" id="OQ7-d0-As0"/>
-                                    <constraint firstItem="bgn-fN-OMO" firstAttribute="top" secondItem="YqZ-Ar-4yK" secondAttribute="top" id="jHU-Gg-PKX"/>
-                                    <constraint firstAttribute="trailing" secondItem="bgn-fN-OMO" secondAttribute="trailing" id="kDw-vE-b68"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.22318739069999999" green="0.40617250799999999" blue="0.60130472720000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="YqZ-Ar-4yK" firstAttribute="trailing" secondItem="Q1P-BL-QRA" secondAttribute="trailing" id="Ymj-7O-y4I"/>
-                            <constraint firstItem="YqZ-Ar-4yK" firstAttribute="top" secondItem="AL4-9l-ucH" secondAttribute="top" id="mPs-4A-FJq"/>
-                            <constraint firstItem="Q1P-BL-QRA" firstAttribute="bottom" secondItem="YqZ-Ar-4yK" secondAttribute="bottom" id="pc0-xl-jg8"/>
-                            <constraint firstItem="YqZ-Ar-4yK" firstAttribute="leading" secondItem="Q1P-BL-QRA" secondAttribute="leading" id="ser-ay-ZSv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Q1P-BL-QRA"/>
-                    </view>
-                    <connections>
-                        <outlet property="nameLabel" destination="U8V-iL-Spq" id="zzi-aZ-nIv"/>
-                        <outlet property="orderButton" destination="krD-li-ivd" id="BXP-Gt-xA4"/>
-                        <outlet property="safeAreaTopConstraint" destination="mPs-4A-FJq" id="cP4-9i-HXg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ajz-Bx-bDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-521" y="-1918"/>
+            <point key="canvasLocation" x="-516" y="-1891"/>
         </scene>
         <!--Place View Controller-->
         <scene sceneID="gq9-qJ-9pj">
@@ -336,7 +221,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3v-hh-p7I">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-1q-9SB" customClass="AShadowView" customModule="Jack" customModuleProvider="target">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-1q-9SB" customClass="AShadowView" customModule="ArtUtilities">
                                         <rect key="frame" x="0.0" y="-60" width="375" height="120"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.35294117650000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -358,12 +243,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GZ-SZ-cgf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GZ-SZ-cgf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFg-cn-sKD">
                                                 <rect key="frame" x="60" y="10" width="255" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -393,14 +278,24 @@
                                             <action selector="backTapped:" destination="7Vt-XT-AxN" eventType="touchUpInside" id="vB1-kA-Fwf"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mko-16-HS8" customClass="CountdownView" customModule="ArtUtilities">
+                                        <rect key="frame" x="305" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Mko-16-HS8" secondAttribute="height" id="pbz-LW-fD1"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1EW-RZ-kGM"/>
+                                    <constraint firstItem="Mko-16-HS8" firstAttribute="top" secondItem="I3v-hh-p7I" secondAttribute="top" id="6mX-B1-HQU"/>
                                     <constraint firstItem="cHA-ff-HGy" firstAttribute="leading" secondItem="I3v-hh-p7I" secondAttribute="leading" constant="10" id="7Rn-96-O7R"/>
                                     <constraint firstItem="cHA-ff-HGy" firstAttribute="top" secondItem="I3v-hh-p7I" secondAttribute="top" constant="10" id="Enk-PO-Ib0"/>
                                     <constraint firstItem="3GZ-SZ-cgf" firstAttribute="leading" secondItem="I3v-hh-p7I" secondAttribute="leading" id="Iqj-t6-TdR"/>
                                     <constraint firstAttribute="bottom" secondItem="ADu-1q-9SB" secondAttribute="bottom" id="MWU-3z-4ug"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mko-16-HS8" secondAttribute="bottom" id="ONW-Bt-Vww"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mko-16-HS8" secondAttribute="trailing" constant="10" id="Vr8-Rc-Z1Z"/>
                                     <constraint firstItem="3GZ-SZ-cgf" firstAttribute="top" secondItem="I3v-hh-p7I" secondAttribute="top" id="WWo-gd-B0Z"/>
                                     <constraint firstAttribute="bottom" secondItem="3GZ-SZ-cgf" secondAttribute="bottom" id="b7n-ea-Fkj"/>
                                     <constraint firstItem="ADu-1q-9SB" firstAttribute="leading" secondItem="I3v-hh-p7I" secondAttribute="leading" id="dsC-Ap-h3q"/>
@@ -409,7 +304,7 @@
                                     <constraint firstItem="ADu-1q-9SB" firstAttribute="top" secondItem="I3v-hh-p7I" secondAttribute="top" constant="-60" id="pCV-ef-GC5"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-FB-W59" customClass="JKButton" customModule="Jack">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-FB-W59" customClass="AUButton" customModule="ArtUtilities">
                                 <rect key="frame" x="91" y="597" width="192" height="50"/>
                                 <color key="backgroundColor" red="0.67982630079999995" green="0.67982630079999995" blue="0.67982630079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -425,6 +320,8 @@
                                         <real key="value" value="11"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="blured" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stringID" value="order_action"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="uppercased" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="orderTapped:" destination="7Vt-XT-AxN" eventType="touchUpInside" id="ITe-t1-tJS"/>
@@ -447,6 +344,7 @@
                         <viewLayoutGuide key="safeArea" id="EAx-T8-eaI"/>
                     </view>
                     <connections>
+                        <outlet property="countdownView" destination="Mko-16-HS8" id="EDu-Cz-8WH"/>
                         <outlet property="nameLabel" destination="fFg-cn-sKD" id="g1m-T5-BZv"/>
                         <outlet property="navBackground" destination="ADu-1q-9SB" id="DfC-cB-8rf"/>
                         <outlet property="navBar" destination="3GZ-SZ-cgf" id="taX-52-4Gs"/>
@@ -477,25 +375,6 @@
             </objects>
             <point key="canvasLocation" x="434" y="-1072"/>
         </scene>
-        <!--Order Table View Controller-->
-        <scene sceneID="DLJ-u6-1Er">
-            <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="4Iq-VF-IzY" customClass="OrderTableViewController" customModule="Jack" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OCJ-au-DfJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="4Iq-VF-IzY" id="LyP-Sc-Rew"/>
-                            <outlet property="delegate" destination="4Iq-VF-IzY" id="5XN-0s-rlf"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xo7-JV-w5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="434" y="-1918"/>
-        </scene>
         <!--Order Overview Table View Controller-->
         <scene sceneID="ofN-Vp-OHl">
             <objects>
@@ -513,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3K-YR-bU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="-2757"/>
+            <point key="canvasLocation" x="433" y="-1892"/>
         </scene>
     </scenes>
 </document>

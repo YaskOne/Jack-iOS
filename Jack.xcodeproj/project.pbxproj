@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		80359F453DB4529325F636DA /* libPods-Jack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419837A1A391485A686FB87 /* libPods-Jack.a */; };
+		D729906921373FFA0041833B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906821373FFA0041833B /* MapViewController.swift */; };
+		D729906B2137434E0041833B /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906A2137434E0041833B /* OrdersViewController.swift */; };
+		D729906D213745200041833B /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906C213745200041833B /* OrdersTableViewController.swift */; };
+		D729906F2137479F0041833B /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729906E2137479F0041833B /* OrderTableCell.xib */; };
+		D74E65AF2136A06F00DB4658 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */; };
+		D7776EA5214178080069128D /* OrderInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA4214178080069128D /* OrderInfosViewController.swift */; };
+		D7776EA721417DBF0069128D /* OrderProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */; };
+		D7776EAD214185E10069128D /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7776EAC214185E10069128D /* OrderProductTableCell.xib */; };
+		D7843757213401F600F0C4CF /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7843756213401F600F0C4CF /* JKCache.swift */; };
 		D7C00F9F20EE7D1100072A54 /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; };
 		D7C00FA020EE7D1100072A54 /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7C00FA720EE839500072A54 /* JKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00FA620EE839500072A54 /* JKLocationManager.swift */; };
 		D7C00FA920EE83E400072A54 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7C00FA820EE83E400072A54 /* Podfile */; };
+		D7CDEB64213EC92B00D97758 /* JKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CDEB63213EC92B00D97758 /* JKWebViewController.swift */; };
 		D7D7C3922119AAEA008DF2DF /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7C3912119AAEA008DF2DF /* Auth.storyboard */; };
 		D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3932119AC11008DF2DF /* APageViewController.swift */; };
 		D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */; };
@@ -22,7 +32,6 @@
 		D7DCF5AD20EE728A00469751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5AB20EE728A00469751 /* LaunchScreen.storyboard */; };
 		D7DCF5B820EE728A00469751 /* JackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5B720EE728A00469751 /* JackTests.swift */; };
 		D7DCF5C320EE728A00469751 /* JackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5C220EE728A00469751 /* JackUITests.swift */; };
-		D7DCF5DF20EE78A500469751 /* JKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DC20EE78A500469751 /* JKButton.swift */; };
 		D7DCF5E020EE78A500469751 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DD20EE78A500469751 /* CountLabel.swift */; };
 		D7DCF5EC20EE78B500469751 /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5EA20EE78B500469751 /* JKSession.swift */; };
 		D7DCF5FB20EE78BE00469751 /* OrderOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5ED20EE78BD00469751 /* OrderOverviewTableViewController.swift */; };
@@ -41,7 +50,7 @@
 		D7DCF60820EE78BE00469751 /* ProductOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5FA20EE78BE00469751 /* ProductOrderCell.xib */; };
 		D7DCF60F20EE78C600469751 /* JKMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60920EE78C600469751 /* JKMarkerView.xib */; };
 		D7DCF61020EE78C600469751 /* JKMarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60A20EE78C600469751 /* JKMarkerInfoView.xib */; };
-		D7DCF61120EE78C600469751 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60B20EE78C600469751 /* MapViewController.swift */; };
+		D7DCF61120EE78C600469751 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60B20EE78C600469751 /* GoogleMapViewController.swift */; };
 		D7DCF61220EE78C600469751 /* MarkersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60C20EE78C600469751 /* MarkersManager.swift */; };
 		D7DCF61320EE78C600469751 /* JKMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60D20EE78C600469751 /* JKMarkerInfoView.swift */; };
 		D7DCF61420EE78C600469751 /* JKMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60E20EE78C600469751 /* JKMarkerView.swift */; };
@@ -70,6 +79,7 @@
 		D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64120EE78E700469751 /* DataGenerator.swift */; };
 		D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64420EE78E700469751 /* JKNavigationController.swift */; };
 		D7DCF64A20EE78FE00469751 /* jackfont2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF64920EE78FE00469751 /* jackfont2.ttf */; };
+		D7F18AF7213C067A00A7BD9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F18AF9213C067A00A7BD9B /* Localizable.strings */; };
 		D7F8822520F3AA6B00B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; };
 		D7F8822620F3AA6B00B2F7EE /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7F8822E20F3AD9500B2F7EE /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */; };
@@ -154,9 +164,19 @@
 		21641B43B09D818307E40CD9 /* Pods-Jack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jack/Pods-Jack.debug.xcconfig"; sourceTree = "<group>"; };
 		282F7DC0DCAD99AE22DA0931 /* Pods-Jack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jack/Pods-Jack.release.xcconfig"; sourceTree = "<group>"; };
 		8419837A1A391485A686FB87 /* libPods-Jack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D729906821373FFA0041833B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D729906A2137434E0041833B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		D729906C213745200041833B /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		D729906E2137479F0041833B /* OrderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableCell.xib; sourceTree = "<group>"; };
+		D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
+		D7776EA4214178080069128D /* OrderInfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfosViewController.swift; sourceTree = "<group>"; };
+		D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductsTableViewController.swift; sourceTree = "<group>"; };
+		D7776EAC214185E10069128D /* OrderProductTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductTableCell.xib; sourceTree = "<group>"; };
+		D7843756213401F600F0C4CF /* JKCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKCache.swift; sourceTree = "<group>"; };
 		D7C00F9620EE7CD700072A54 /* ArtUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArtUtilities.xcodeproj; path = ../ArtUtilities/ArtUtilities.xcodeproj; sourceTree = "<group>"; };
 		D7C00FA620EE839500072A54 /* JKLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKLocationManager.swift; sourceTree = "<group>"; };
 		D7C00FA820EE83E400072A54 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D7CDEB63213EC92B00D97758 /* JKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKWebViewController.swift; sourceTree = "<group>"; };
 		D7D7C3912119AAEA008DF2DF /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		D7D7C3932119AC11008DF2DF /* APageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APageViewController.swift; sourceTree = "<group>"; };
 		D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +193,6 @@
 		D7DCF5BE20EE728A00469751 /* JackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DCF5C220EE728A00469751 /* JackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackUITests.swift; sourceTree = "<group>"; };
 		D7DCF5C420EE728A00469751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7DCF5DC20EE78A500469751 /* JKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKButton.swift; sourceTree = "<group>"; };
 		D7DCF5DD20EE78A500469751 /* CountLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountLabel.swift; sourceTree = "<group>"; };
 		D7DCF5EA20EE78B500469751 /* JKSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKSession.swift; sourceTree = "<group>"; };
 		D7DCF5ED20EE78BD00469751 /* OrderOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderOverviewTableViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +211,7 @@
 		D7DCF5FA20EE78BE00469751 /* ProductOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductOrderCell.xib; sourceTree = "<group>"; };
 		D7DCF60920EE78C600469751 /* JKMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKMarkerView.xib; sourceTree = "<group>"; };
 		D7DCF60A20EE78C600469751 /* JKMarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKMarkerInfoView.xib; sourceTree = "<group>"; };
-		D7DCF60B20EE78C600469751 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D7DCF60B20EE78C600469751 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		D7DCF60C20EE78C600469751 /* MarkersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkersManager.swift; sourceTree = "<group>"; };
 		D7DCF60D20EE78C600469751 /* JKMarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKMarkerInfoView.swift; sourceTree = "<group>"; };
 		D7DCF60E20EE78C600469751 /* JKMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKMarkerView.swift; sourceTree = "<group>"; };
@@ -221,6 +240,10 @@
 		D7DCF64120EE78E700469751 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		D7DCF64420EE78E700469751 /* JKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKNavigationController.swift; sourceTree = "<group>"; };
 		D7DCF64920EE78FE00469751 /* jackfont2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont2.ttf; sourceTree = "<group>"; };
+		D7F18AF8213C067A00A7BD9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D7F18AFA213C069300A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		D7F18AFB213C069300A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D7F18AFC213C069300A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D7F8821A20F3AA5800B2F7EE /* JackModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JackModel.xcodeproj; path = ../JackModel/JackModel.xcodeproj; sourceTree = "<group>"; };
 		D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKMediator.swift; sourceTree = "<group>"; };
 		D7F8822D20F3AD9500B2F7EE /* JKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKNetwork.swift; sourceTree = "<group>"; };
@@ -286,6 +309,8 @@
 				D7D7C3912119AAEA008DF2DF /* Auth.storyboard */,
 				D7D7C3932119AC11008DF2DF /* APageViewController.swift */,
 				D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */,
+				D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */,
+				D7CDEB63213EC92B00D97758 /* JKWebViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -328,6 +353,7 @@
 				D7DCF5A920EE728A00469751 /* Assets.xcassets */,
 				D7DCF5AB20EE728A00469751 /* LaunchScreen.storyboard */,
 				D7DCF5AE20EE728A00469751 /* Info.plist */,
+				D7F18AF9213C067A00A7BD9B /* Localizable.strings */,
 			);
 			path = Jack;
 			sourceTree = "<group>";
@@ -417,8 +443,10 @@
 				D7DCF60A20EE78C600469751 /* JKMarkerInfoView.xib */,
 				D7DCF60E20EE78C600469751 /* JKMarkerView.swift */,
 				D7DCF60920EE78C600469751 /* JKMarkerView.xib */,
-				D7DCF60B20EE78C600469751 /* MapViewController.swift */,
+				D7DCF60B20EE78C600469751 /* GoogleMapViewController.swift */,
 				D7DCF60C20EE78C600469751 /* MarkersManager.swift */,
+				D729906821373FFA0041833B /* MapViewController.swift */,
+				D729906A2137434E0041833B /* OrdersViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -447,6 +475,11 @@
 		D7DCF5D620EE72ED00469751 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D729906C213745200041833B /* OrdersTableViewController.swift */,
+				D729906E2137479F0041833B /* OrderTableCell.xib */,
+				D7776EA4214178080069128D /* OrderInfosViewController.swift */,
+				D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */,
+				D7776EAC214185E10069128D /* OrderProductTableCell.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -456,6 +489,7 @@
 			children = (
 				D7C00FA620EE839500072A54 /* JKLocationManager.swift */,
 				D7DCF5EA20EE78B500469751 /* JKSession.swift */,
+				D7843756213401F600F0C4CF /* JKCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -464,7 +498,6 @@
 			isa = PBXGroup;
 			children = (
 				D7DCF5DD20EE78A500469751 /* CountLabel.swift */,
-				D7DCF5DC20EE78A500469751 /* JKButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -578,6 +611,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = D7DCF59620EE728900469751;
 			productRefGroup = D7DCF5A020EE728900469751 /* Products */;
@@ -640,12 +674,14 @@
 				D7DCF63220EE78DA00469751 /* Jack_logo_main@3x.png in Resources */,
 				D7DCF5AD20EE728A00469751 /* LaunchScreen.storyboard in Resources */,
 				D7DCF63020EE78DA00469751 /* Jack_logo_main@2x.png in Resources */,
+				D729906F2137479F0041833B /* OrderTableCell.xib in Resources */,
 				D7DCF63920EE78DA00469751 /* marker_white_120x105@1x.png in Resources */,
 				D7DCF63F20EE78DA00469751 /* MissingImage@3x.png in Resources */,
 				D7DCF60320EE78BE00469751 /* CategoryCell.xib in Resources */,
 				D7DCF60720EE78BE00469751 /* PlaceHeaderCell.xib in Resources */,
 				D7DCF63520EE78DA00469751 /* marker_120x105@3x.png in Resources */,
 				D7DCF63620EE78DA00469751 /* marker_white_120x105@2x.png in Resources */,
+				D7F18AF7213C067A00A7BD9B /* Localizable.strings in Resources */,
 				D7DCF61A20EE78CD00469751 /* Home.storyboard in Resources */,
 				D7C00FA920EE83E400072A54 /* Podfile in Resources */,
 				D7DCF62F20EE78DA00469751 /* JackWordmark@3x.png in Resources */,
@@ -662,6 +698,7 @@
 				D7DCF63B20EE78DA00469751 /* Jack_logo.png in Resources */,
 				D7D7C3922119AAEA008DF2DF /* Auth.storyboard in Resources */,
 				D7DCF61020EE78C600469751 /* JKMarkerInfoView.xib in Resources */,
+				D7776EAD214185E10069128D /* OrderProductTableCell.xib in Resources */,
 				D7DCF5FE20EE78BE00469751 /* Place.storyboard in Resources */,
 				D7DCF5FC20EE78BE00469751 /* ProductCell.xib in Resources */,
 				D7DCF63A20EE78DA00469751 /* JackWordmark.png in Resources */,
@@ -735,10 +772,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7776EA5214178080069128D /* OrderInfosViewController.swift in Sources */,
+				D729906921373FFA0041833B /* MapViewController.swift in Sources */,
 				D7DCF61920EE78CD00469751 /* UserProfileViewController.swift in Sources */,
 				D7F8822E20F3AD9500B2F7EE /* JKMediator.swift in Sources */,
+				D729906B2137434E0041833B /* OrdersViewController.swift in Sources */,
 				D7DCF61420EE78C600469751 /* JKMarkerView.swift in Sources */,
-				D7DCF61120EE78C600469751 /* MapViewController.swift in Sources */,
+				D7DCF61120EE78C600469751 /* GoogleMapViewController.swift in Sources */,
+				D7CDEB64213EC92B00D97758 /* JKWebViewController.swift in Sources */,
 				D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */,
 				D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */,
 				D7C00FA720EE839500072A54 /* JKLocationManager.swift in Sources */,
@@ -746,16 +787,19 @@
 				D7DCF5A520EE728900469751 /* StartViewController.swift in Sources */,
 				D7DCF60220EE78BE00469751 /* PlaceOverviewViewController.swift in Sources */,
 				D7DCF61C20EE78CD00469751 /* HomeViewController.swift in Sources */,
+				D729906D213745200041833B /* OrdersTableViewController.swift in Sources */,
 				D7DCF60120EE78BE00469751 /* OrderOverviewViewController.swift in Sources */,
 				D7DCF60420EE78BE00469751 /* OrderViewController.swift in Sources */,
 				D7DCF5EC20EE78B500469751 /* JKSession.swift in Sources */,
 				D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */,
 				D7DCF61B20EE78CD00469751 /* PickTimeViewController.swift in Sources */,
-				D7DCF5DF20EE78A500469751 /* JKButton.swift in Sources */,
 				D7DCF60020EE78BE00469751 /* OrderTableViewController.swift in Sources */,
+				D7776EA721417DBF0069128D /* OrderProductsTableViewController.swift in Sources */,
 				D7DCF5FF20EE78BE00469751 /* PlaceViewController.swift in Sources */,
 				D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */,
+				D74E65AF2136A06F00DB4658 /* AuthentificationViewController.swift in Sources */,
 				D7DCF5A320EE728900469751 /* AppDelegate.swift in Sources */,
+				D7843757213401F600F0C4CF /* JKCache.swift in Sources */,
 				D7DCF60520EE78BE00469751 /* MenuTableViewController.swift in Sources */,
 				D7DCF5E020EE78A500469751 /* CountLabel.swift in Sources */,
 				D7DCF5FB20EE78BE00469751 /* OrderOverviewTableViewController.swift in Sources */,
@@ -811,6 +855,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7DCF5A720EE728900469751 /* Base */,
+				D7F18AFA213C069300A7BD9B /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -819,8 +864,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7DCF5AC20EE728A00469751 /* Base */,
+				D7F18AFB213C069300A7BD9B /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F18AF9213C067A00A7BD9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F18AF8213C067A00A7BD9B /* en */,
+				D7F18AFC213C069300A7BD9B /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -830,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -890,6 +946,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -946,15 +1003,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = Jack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jack";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -966,15 +1027,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = Jack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jack";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
