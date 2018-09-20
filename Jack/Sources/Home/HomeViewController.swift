@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dashboardButton: UIButton!
     @IBOutlet weak var shopButton: UIButton!
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    
     var menu: [UIButton] {
         return [
             statsButton,
@@ -43,7 +41,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topConstraint.constant = UIApplication.shared.statusBarFrame.height
         currentPage = 1
         NotificationCenter.default.addObserver(self, selector: #selector(self.pageChangedHandler), name: changePageNotification, object: nil)
     }

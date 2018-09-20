@@ -9,9 +9,9 @@
 import UIKit
 import ArtUtilities
 
-class JKMarkerInfoView: AView {
+class JKMarkerInfoView: AUView {
 
-    @IBOutlet var contentView: AView!
+    @IBOutlet var contentView: AUView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

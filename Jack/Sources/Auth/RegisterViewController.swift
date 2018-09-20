@@ -11,9 +11,11 @@ import ArtUtilities
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var signUpEmail: UITextField!
-    @IBOutlet weak var signUpName: UITextField!
-    @IBOutlet weak var signUpPassword: UITextField!
+    var delegate: AuthentificationDelegate?
+    
+    @IBOutlet weak var signUpEmail: AULabeledTextField!
+    @IBOutlet weak var signUpName: AULabeledTextField!
+    @IBOutlet weak var signUpPassword: AULabeledTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,63 +26,50 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        
         guard let user = JKSession.shared.user else {
             return
         }
         signUpEmail.text = user.email
         signUpName.text = user.name
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @IBAction func cguTapped(_ sender: Any) {
+        navigationController?.pushViewController(homeStoryboard.instantiateViewController(withIdentifier: "CGU"), animated: true)
     }
 
     @IBOutlet weak var signUpButton: AUButton!
     
     @IBAction func signUpTapped(_ sender: Any) {
-        signUpButton.isEnabled = false
-        JKMediator.updateUser(id: JKSession.shared.userId, name: signUpName.text, email: signUpEmail.text, password: signUpPassword.text, success: {
-            self.navigationController?.popViewController(animated: true)
-            self.signUpButton?.isEnabled = true
+        if let user = JKSession.shared.user {
+            signUpButton.isEnabled = false
+            JKMediator.updateUser(id: JKSession.shared.userId, name: signUpName.text, email: signUpEmail.text, password: signUpPassword.text, success: {
+                self.navigationController?.popViewController(animated: true)
+                self.signUpButton?.isEnabled = true
             }, failure: {
-            self.signUpButton.isEnabled = true
-        })
+                self.signUpButton.isEnabled = true
+            })
+        } else {
+            guard
+                let email = signUpEmail.text,
+                let name = signUpName.text,
+                let password = signUpPassword.text else {
+                    return
+            }
+            
+            signUpButton.isEnabled = false
+            JKMediator.createUser(name: name, email: email, password: password, success: { id in
+                
+                JKMediator.logUser(email: email, password: password, success: { user in
+                    JKSession.shared.user = user
+                    self.signUpButton.isEnabled = true
+                    self.navigationController?.popViewController(animated: true)
+                    self.delegate?.userLogged()
+                }, failure: {})
+            }, failure: {
+                self.signUpButton.isEnabled = true
+            })
+        }
     }
 }
-//
-//class RegisterViewController: UIViewController {
-//
-//    @IBOutlet weak var pageControl: UIPageControl?
-////    @IBOutlet weak var containerView: UIView!
-//
-//    var pageViewController: APageViewController? {
-//        didSet {
-//            pageViewController?.pageDelegate = self
-//            pageControl?.numberOfPages = (pageViewController?.pages.count)!
-//        }
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        pageControl?.currentPage = 0
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "RegisterPageViewController" {
-//            if let pageController = segue.destination as? APageViewController {
-//                self.pageViewController = pageController
-//            }
-//        }
-//    }
-//
-//}
-//
-//extension RegisterViewController: APageViewControllerDelegate {
-//    func pageChanged(index: Int) {
-//        pageControl?.currentPage = index
-//    }
-//}

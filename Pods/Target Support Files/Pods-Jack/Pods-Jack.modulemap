@@ -1,4 +1,4 @@
-module Pods_Jack {
+framework module Pods_Jack {
   umbrella header "Pods-Jack-umbrella.h"
 
   export *

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import JackModel
 
 class GoogleMapViewController: UIViewController {
     
@@ -16,6 +17,10 @@ class GoogleMapViewController: UIViewController {
     let geocoder = GMSGeocoder()
     
     var markersManager: MarkersManager?
+    
+    lazy var userPosMarker: GPSPosMarker = {
+       return GPSPosMarker.init(JKSession.shared.lastPos!)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,13 @@ class GoogleMapViewController: UIViewController {
     
     func normalizeDirection() {
         mapView?.animate(toBearing: 0)
+    }
+    
+    public func updateUserPosition() {
+        if let pos = JKSession.shared.lastPos {
+            userPosMarker.location = pos
+            userPosMarker.map = mapView
+        }
     }
 }
 

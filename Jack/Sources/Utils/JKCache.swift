@@ -8,6 +8,7 @@
 
 import Foundation
 import JackModel
+import ArtUtilities
 
 let businessChangedNotification = Notification.Name("businessChangedNotification")
 let productChangedNotification = Notification.Name("productChangedNotification")
@@ -31,6 +32,10 @@ open class JKBusinessCache: JKIdCache {
     public func loadInCache(ids: [UInt]) {
         let newIds = removeKnownIds(ids: ids)
         
+        if newIds.count == 0 {
+            return
+        }
+        
         JKMediator.fetchBusiness(ids: newIds, success: { businesses in
             for business in businesses {
                 self.addObject(id: business.id, object: business)
@@ -49,6 +54,10 @@ open class JKProductCache: JKIdCache {
     public func loadInCache(ids: [UInt]) {
         let newIds = removeKnownIds(ids: ids)
         
+        if newIds.count == 0 {
+            return
+        }
+
         JKMediator.fetchProducts(ids: newIds, success: { products in
             for product in products {
                 self.addObject(id: product.id, object: product)
@@ -66,6 +75,10 @@ open class JKCategoryCache: JKIdCache {
     
     public func loadInCache(ids: [UInt]) {
         let newIds = removeKnownIds(ids: ids)
+        
+        if newIds.count == 0 {
+            return
+        }
         
         JKMediator.fetchCategories(ids: newIds, success: { categories in
             for category in categories {
@@ -91,6 +104,10 @@ open class JKUserCache: JKIdCache {
     public func loadInCache(ids: [UInt]) {
         let newIds = removeKnownIds(ids: ids)
         
+        if newIds.count == 0 {
+            return
+        }
+        
         JKMediator.fetchUsers(ids: newIds, success: { users in
             for user in users {
                 self.addObject(id: user.id, object: user)
@@ -110,5 +127,21 @@ open class JKOrderCache: JKIdCache {
         super.init()
         
         notification = orderChangedNotification
+    }
+}
+
+
+open class JKImageLoader {
+    
+    public static func loadImage(imageView: UIImageView?, url: String, error: @escaping () -> Void) {
+        if let image = JKImageCache.shared.getObject(key: url) {
+            imageView?.image = image
+            imageView?.isHidden = false
+        }
+        else {
+            imageView?.imageFromURL(urlString: url) { image in
+                JKImageCache.shared.addObject(key: url, object: image)
+            }
+        }
     }
 }

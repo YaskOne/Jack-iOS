@@ -42,7 +42,8 @@ class OrderInfosViewController: UIViewController {
         dateLabel?.text = "Le \(date), à \(time)"
         countdownView?.value = order.pickupDate.minutesSinceNow()
         countdownView?.textColor = UIColor.darkGray
-        stateLabel?.text = order.canceled ? JKOrderState.CANCELED.rawValue : order.state.rawValue
+        stateLabel?.text = order.status.description
+        stateLabel?.textColor = order.status.color
         
         orderTable?.productIds = order.productIds
     }

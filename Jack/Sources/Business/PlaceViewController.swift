@@ -9,6 +9,7 @@
 import UIKit
 import ArtUtilities
 import JackModel
+import Stripe
 
 class PlaceViewController: APresenterViewController {
     
@@ -21,10 +22,6 @@ class PlaceViewController: APresenterViewController {
     @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
     
     var menuViewController: MenuTableViewController?
-//
-//    var orders: [UInt: JKProduct] {
-//        return JKSession.shared.order?.products ?? [:]
-//    }
     
     lazy var popController = {
         return AUPopoverViewController()
@@ -64,7 +61,6 @@ class PlaceViewController: APresenterViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     func setUp() {
@@ -94,23 +90,31 @@ class PlaceViewController: APresenterViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func orderTapped(_ sender: Any) {
-        if let _ = JKSession.shared.user {
-            guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
-                return
-            }
-            
-            popController.setUp(view: view, frame: view.frame, controller: controller)
-            controller.delegate = self
-            
-            self.present(popController, animated: true, completion: nil)
-        } else {
-            guard let controller = authStoryboard.instantiateViewController(withIdentifier: "AuthentificationViewController") as? AuthentificationViewController else {
-                return
-            }
-            
-            self.navigationController?.pushViewController(controller, animated: true)
+    
+    
+    @IBAction func orderTapped() {
+        if JKSession.shared.order?.extendedProducts.count == 0 {
+            return
         }
+        if !JKSession.shared.isLogged(delegate: self) {
+            return
+        }
+        
+        #if !DEV
+        if !JKSession.shared.isPaymentAuthorized(delegate: self) {
+            return
+        }
+        #endif
+
+        guard let controller = placeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController else {
+            return
+        }
+        
+        popController.setUp(view: view, frame: view.frame, controller: controller)
+        controller.delegate = self
+        
+        self.present(popController, animated: true, completion: nil)
+        orderButton?.isEnabled = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -222,5 +226,34 @@ extension PlaceViewController: ModifyOrderDelegate {
 extension PlaceViewController: OrderCompletedDelegate {
     func orderCompleted() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension PlaceViewController: AuthentificationDelegate {
+    func userLogged() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        orderTapped()
+    }
+}
+
+extension PlaceViewController: STPAddCardViewControllerDelegate {
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreateToken token: STPToken, completion: @escaping STPErrorBlock) {
+        
+        orderButton?.isEnabled = false
+        JKMediator.updateUser(id: JKSession.shared.userId, stripeKey: token.tokenId, success: {
+            self.orderTapped()
+            self.orderButton?.isEnabled = true
+        }, failure: {
+            self.orderButton?.isEnabled = true
+        })
+        navigationController?.popViewController(animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        orderTapped()
     }
 }

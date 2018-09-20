@@ -18,11 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="221.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTI-rD-uSd">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTI-rD-uSd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-lS-7kz">
-                                <rect key="frame" x="0.0" y="-45" width="375" height="266"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-lS-7kz" customClass="AUImageView" customModule="ArtUtilities">
+                                <rect key="frame" x="0.0" y="-60" width="375" height="281"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXM-G0-XlC">
                                 <rect key="frame" x="0.0" y="190.5" width="375" height="20.5"/>
@@ -44,7 +45,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7TB-t0-kdG" secondAttribute="trailing" constant="8" id="4lP-0z-42A"/>
-                            <constraint firstItem="Nvl-lS-7kz" firstAttribute="top" secondItem="HTI-rD-uSd" secondAttribute="top" constant="-45" id="4yZ-qF-sgj"/>
+                            <constraint firstItem="Nvl-lS-7kz" firstAttribute="top" secondItem="HTI-rD-uSd" secondAttribute="top" constant="-60" id="4yZ-qF-sgj"/>
                             <constraint firstItem="96Y-Nv-7Ra" firstAttribute="top" secondItem="HTI-rD-uSd" secondAttribute="top" id="ACZ-Pu-suy"/>
                             <constraint firstAttribute="bottom" secondItem="7TB-t0-kdG" secondAttribute="bottom" constant="40" id="D88-wl-zZd"/>
                             <constraint firstAttribute="bottom" secondItem="rXM-G0-XlC" secondAttribute="bottom" constant="10" id="JBA-8q-NAp"/>

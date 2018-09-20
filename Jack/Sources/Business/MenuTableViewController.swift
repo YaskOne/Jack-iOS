@@ -188,7 +188,7 @@ class ProductOrderCell: UITableViewCell {
 }
 
 class PlaceHeaderCell: UITableViewCell {
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: AUImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!

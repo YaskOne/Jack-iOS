@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80359F453DB4529325F636DA /* libPods-Jack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419837A1A391485A686FB87 /* libPods-Jack.a */; };
+		88C432F98E9AB1538EA3AADE /* Pods_Jack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3C2BF95730B1CCAAFEBDAB /* Pods_Jack.framework */; };
 		D729906921373FFA0041833B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906821373FFA0041833B /* MapViewController.swift */; };
 		D729906B2137434E0041833B /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906A2137434E0041833B /* OrdersViewController.swift */; };
-		D729906D213745200041833B /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906C213745200041833B /* OrdersTableViewController.swift */; };
+		D729906D213745200041833B /* CurrentOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906C213745200041833B /* CurrentOrdersTableViewController.swift */; };
 		D729906F2137479F0041833B /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729906E2137479F0041833B /* OrderTableCell.xib */; };
+		D73EE41421459AE4000AA867 /* PaymentInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EE41321459AE4000AA867 /* PaymentInfosViewController.swift */; };
 		D74E65AF2136A06F00DB4658 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */; };
+		D76B6151214DA3D000F1B7CB /* PastOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B6150214DA3D000F1B7CB /* PastOrderTableViewController.swift */; };
 		D7776EA5214178080069128D /* OrderInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA4214178080069128D /* OrderInfosViewController.swift */; };
 		D7776EA721417DBF0069128D /* OrderProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */; };
 		D7776EAD214185E10069128D /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7776EAC214185E10069128D /* OrderProductTableCell.xib */; };
@@ -25,6 +27,7 @@
 		D7D7C3922119AAEA008DF2DF /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7C3912119AAEA008DF2DF /* Auth.storyboard */; };
 		D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3932119AC11008DF2DF /* APageViewController.swift */; };
 		D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */; };
+		D7DCBE93214D694D0053E86E /* logo_black_and_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCBE90214D694D0053E86E /* logo_black_and_white.png */; };
 		D7DCF5A320EE728900469751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A220EE728900469751 /* AppDelegate.swift */; };
 		D7DCF5A520EE728900469751 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A420EE728900469751 /* StartViewController.swift */; };
 		D7DCF5A820EE728900469751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A620EE728900469751 /* Main.storyboard */; };
@@ -39,7 +42,6 @@
 		D7DCF5FD20EE78BE00469751 /* OrderOverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5EF20EE78BE00469751 /* OrderOverviewCell.xib */; };
 		D7DCF5FE20EE78BE00469751 /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F020EE78BE00469751 /* Place.storyboard */; };
 		D7DCF5FF20EE78BE00469751 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F120EE78BE00469751 /* PlaceViewController.swift */; };
-		D7DCF60020EE78BE00469751 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F220EE78BE00469751 /* OrderTableViewController.swift */; };
 		D7DCF60120EE78BE00469751 /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F320EE78BE00469751 /* OrderOverviewViewController.swift */; };
 		D7DCF60220EE78BE00469751 /* PlaceOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F420EE78BE00469751 /* PlaceOverviewViewController.swift */; };
 		D7DCF60320EE78BE00469751 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F520EE78BE00469751 /* CategoryCell.xib */; };
@@ -79,11 +81,168 @@
 		D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64120EE78E700469751 /* DataGenerator.swift */; };
 		D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64420EE78E700469751 /* JKNavigationController.swift */; };
 		D7DCF64A20EE78FE00469751 /* jackfont2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF64920EE78FE00469751 /* jackfont2.ttf */; };
+		D7E2832521444AB500D49D97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E2832221444AB500D49D97 /* GoogleService-Info.plist */; };
 		D7F18AF7213C067A00A7BD9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F18AF9213C067A00A7BD9B /* Localizable.strings */; };
 		D7F8822520F3AA6B00B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; };
 		D7F8822620F3AA6B00B2F7EE /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7F8822E20F3AD9500B2F7EE /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */; };
 		D7F8822F20F3AD9500B2F7EE /* JKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822D20F3AD9500B2F7EE /* JKNetwork.swift */; };
+		D7F9E9162151687E00B1F15F /* OrderInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA4214178080069128D /* OrderInfosViewController.swift */; };
+		D7F9E9172151687E00B1F15F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906821373FFA0041833B /* MapViewController.swift */; };
+		D7F9E9182151687E00B1F15F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61520EE78CD00469751 /* UserProfileViewController.swift */; };
+		D7F9E9192151687E00B1F15F /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */; };
+		D7F9E91A2151687E00B1F15F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906A2137434E0041833B /* OrdersViewController.swift */; };
+		D7F9E91B2151687E00B1F15F /* JKMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60E20EE78C600469751 /* JKMarkerView.swift */; };
+		D7F9E91C2151687E00B1F15F /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60B20EE78C600469751 /* GoogleMapViewController.swift */; };
+		D7F9E91D2151687E00B1F15F /* JKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CDEB63213EC92B00D97758 /* JKWebViewController.swift */; };
+		D7F9E91E2151687E00B1F15F /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64120EE78E700469751 /* DataGenerator.swift */; };
+		D7F9E91F2151687E00B1F15F /* APageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3932119AC11008DF2DF /* APageViewController.swift */; };
+		D7F9E9202151687E00B1F15F /* PastOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B6150214DA3D000F1B7CB /* PastOrderTableViewController.swift */; };
+		D7F9E9212151687E00B1F15F /* JKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00FA620EE839500072A54 /* JKLocationManager.swift */; };
+		D7F9E9222151687E00B1F15F /* ProductOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F820EE78BE00469751 /* ProductOverviewViewController.swift */; };
+		D7F9E9232151687E00B1F15F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A420EE728900469751 /* StartViewController.swift */; };
+		D7F9E9242151687E00B1F15F /* PlaceOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F420EE78BE00469751 /* PlaceOverviewViewController.swift */; };
+		D7F9E9252151687E00B1F15F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61820EE78CD00469751 /* HomeViewController.swift */; };
+		D7F9E9262151687E00B1F15F /* CurrentOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906C213745200041833B /* CurrentOrdersTableViewController.swift */; };
+		D7F9E9272151687E00B1F15F /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F320EE78BE00469751 /* OrderOverviewViewController.swift */; };
+		D7F9E9282151687E00B1F15F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F620EE78BE00469751 /* OrderViewController.swift */; };
+		D7F9E9292151687E00B1F15F /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5EA20EE78B500469751 /* JKSession.swift */; };
+		D7F9E92A2151687E00B1F15F /* JKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64420EE78E700469751 /* JKNavigationController.swift */; };
+		D7F9E92B2151687E00B1F15F /* PickTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61720EE78CD00469751 /* PickTimeViewController.swift */; };
+		D7F9E92C2151687E00B1F15F /* PaymentInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EE41321459AE4000AA867 /* PaymentInfosViewController.swift */; };
+		D7F9E92D2151687E00B1F15F /* OrderProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */; };
+		D7F9E92E2151687E00B1F15F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F120EE78BE00469751 /* PlaceViewController.swift */; };
+		D7F9E92F2151687E00B1F15F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */; };
+		D7F9E9302151687E00B1F15F /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */; };
+		D7F9E9312151687E00B1F15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A220EE728900469751 /* AppDelegate.swift */; };
+		D7F9E9322151687E00B1F15F /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7843756213401F600F0C4CF /* JKCache.swift */; };
+		D7F9E9332151687E00B1F15F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F720EE78BE00469751 /* MenuTableViewController.swift */; };
+		D7F9E9342151687E00B1F15F /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DD20EE78A500469751 /* CountLabel.swift */; };
+		D7F9E9352151687E00B1F15F /* OrderOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5ED20EE78BD00469751 /* OrderOverviewTableViewController.swift */; };
+		D7F9E9362151687E00B1F15F /* JKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822D20F3AD9500B2F7EE /* JKNetwork.swift */; };
+		D7F9E9372151687E00B1F15F /* MarkersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60C20EE78C600469751 /* MarkersManager.swift */; };
+		D7F9E9382151687E00B1F15F /* JKMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60D20EE78C600469751 /* JKMarkerInfoView.swift */; };
+		D7F9E93A2151687E00B1F15F /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; };
+		D7F9E93B2151687E00B1F15F /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; };
+		D7F9E93C2151687E00B1F15F /* Pods_Jack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3C2BF95730B1CCAAFEBDAB /* Pods_Jack.framework */; };
+		D7F9E93E2151687E00B1F15F /* Jack_logo_main@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62020EE78D900469751 /* Jack_logo_main@3x.png */; };
+		D7F9E93F2151687E00B1F15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5AB20EE728A00469751 /* LaunchScreen.storyboard */; };
+		D7F9E9402151687E00B1F15F /* Jack_logo_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61E20EE78D900469751 /* Jack_logo_main@2x.png */; };
+		D7F9E9412151687E00B1F15F /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729906E2137479F0041833B /* OrderTableCell.xib */; };
+		D7F9E9422151687E00B1F15F /* marker_white_120x105@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62720EE78DA00469751 /* marker_white_120x105@1x.png */; };
+		D7F9E9432151687E00B1F15F /* MissingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62D20EE78DA00469751 /* MissingImage@3x.png */; };
+		D7F9E9442151687E00B1F15F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E2832221444AB500D49D97 /* GoogleService-Info.plist */; };
+		D7F9E9452151687E00B1F15F /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F520EE78BE00469751 /* CategoryCell.xib */; };
+		D7F9E9462151687E00B1F15F /* PlaceHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F920EE78BE00469751 /* PlaceHeaderCell.xib */; };
+		D7F9E9472151687E00B1F15F /* marker_120x105@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62320EE78D900469751 /* marker_120x105@3x.png */; };
+		D7F9E9482151687E00B1F15F /* logo_black_and_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCBE90214D694D0053E86E /* logo_black_and_white.png */; };
+		D7F9E9492151687E00B1F15F /* marker_white_120x105@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62420EE78D900469751 /* marker_white_120x105@2x.png */; };
+		D7F9E94A2151687E00B1F15F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F18AF9213C067A00A7BD9B /* Localizable.strings */; };
+		D7F9E94B2151687E00B1F15F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61620EE78CD00469751 /* Home.storyboard */; };
+		D7F9E94C2151687E00B1F15F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7C00FA820EE83E400072A54 /* Podfile */; };
+		D7F9E94D2151687E00B1F15F /* JackWordmark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61D20EE78D900469751 /* JackWordmark@3x.png */; };
+		D7F9E94E2151687E00B1F15F /* ProductOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5FA20EE78BE00469751 /* ProductOrderCell.xib */; };
+		D7F9E94F2151687E00B1F15F /* MissingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62620EE78DA00469751 /* MissingImage.png */; };
+		D7F9E9502151687E00B1F15F /* jackfont2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF64920EE78FE00469751 /* jackfont2.ttf */; };
+		D7F9E9512151687E00B1F15F /* JackWordmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62C20EE78DA00469751 /* JackWordmark@2x.png */; };
+		D7F9E9522151687E00B1F15F /* OrderOverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5EF20EE78BE00469751 /* OrderOverviewCell.xib */; };
+		D7F9E9532151687E00B1F15F /* Jack_logo_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62B20EE78DA00469751 /* Jack_logo_main.png */; };
+		D7F9E9542151687E00B1F15F /* JKMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60920EE78C600469751 /* JKMarkerView.xib */; };
+		D7F9E9552151687E00B1F15F /* marker_120x105@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62120EE78D900469751 /* marker_120x105@2x.png */; };
+		D7F9E9562151687E00B1F15F /* MissingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62A20EE78DA00469751 /* MissingImage@2x.png */; };
+		D7F9E9572151687E00B1F15F /* marker_white_120x105@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62520EE78D900469751 /* marker_white_120x105@3x.png */; };
+		D7F9E9582151687E00B1F15F /* Jack_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62920EE78DA00469751 /* Jack_logo.png */; };
+		D7F9E9592151687E00B1F15F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7C3912119AAEA008DF2DF /* Auth.storyboard */; };
+		D7F9E95A2151687E00B1F15F /* JKMarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60A20EE78C600469751 /* JKMarkerInfoView.xib */; };
+		D7F9E95B2151687E00B1F15F /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7776EAC214185E10069128D /* OrderProductTableCell.xib */; };
+		D7F9E95C2151687E00B1F15F /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F020EE78BE00469751 /* Place.storyboard */; };
+		D7F9E95D2151687E00B1F15F /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5EE20EE78BE00469751 /* ProductCell.xib */; };
+		D7F9E95E2151687E00B1F15F /* JackWordmark.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62820EE78DA00469751 /* JackWordmark.png */; };
+		D7F9E95F2151687E00B1F15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A920EE728A00469751 /* Assets.xcassets */; };
+		D7F9E9602151687E00B1F15F /* Jack_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61F20EE78D900469751 /* Jack_logo@3x.png */; };
+		D7F9E9612151687E00B1F15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A620EE728900469751 /* Main.storyboard */; };
+		D7F9E9622151687E00B1F15F /* Jack_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62E20EE78DA00469751 /* Jack_logo@2x.png */; };
+		D7F9E9632151687E00B1F15F /* marker_120x105@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62220EE78D900469751 /* marker_120x105@1x.png */; };
+		D7F9E9662151687E00B1F15F /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7F9E9672151687E00B1F15F /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7F9E9B22151733900B1F15F /* OrderInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA4214178080069128D /* OrderInfosViewController.swift */; };
+		D7F9E9B32151733900B1F15F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906821373FFA0041833B /* MapViewController.swift */; };
+		D7F9E9B42151733900B1F15F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61520EE78CD00469751 /* UserProfileViewController.swift */; };
+		D7F9E9B52151733900B1F15F /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */; };
+		D7F9E9B62151733900B1F15F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906A2137434E0041833B /* OrdersViewController.swift */; };
+		D7F9E9B72151733900B1F15F /* JKMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60E20EE78C600469751 /* JKMarkerView.swift */; };
+		D7F9E9B82151733900B1F15F /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60B20EE78C600469751 /* GoogleMapViewController.swift */; };
+		D7F9E9B92151733900B1F15F /* JKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CDEB63213EC92B00D97758 /* JKWebViewController.swift */; };
+		D7F9E9BA2151733900B1F15F /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64120EE78E700469751 /* DataGenerator.swift */; };
+		D7F9E9BB2151733900B1F15F /* APageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3932119AC11008DF2DF /* APageViewController.swift */; };
+		D7F9E9BC2151733900B1F15F /* PastOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B6150214DA3D000F1B7CB /* PastOrderTableViewController.swift */; };
+		D7F9E9BD2151733900B1F15F /* JKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00FA620EE839500072A54 /* JKLocationManager.swift */; };
+		D7F9E9BE2151733900B1F15F /* ProductOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F820EE78BE00469751 /* ProductOverviewViewController.swift */; };
+		D7F9E9BF2151733900B1F15F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A420EE728900469751 /* StartViewController.swift */; };
+		D7F9E9C02151733900B1F15F /* PlaceOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F420EE78BE00469751 /* PlaceOverviewViewController.swift */; };
+		D7F9E9C12151733900B1F15F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61820EE78CD00469751 /* HomeViewController.swift */; };
+		D7F9E9C22151733900B1F15F /* CurrentOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729906C213745200041833B /* CurrentOrdersTableViewController.swift */; };
+		D7F9E9C32151733900B1F15F /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F320EE78BE00469751 /* OrderOverviewViewController.swift */; };
+		D7F9E9C42151733900B1F15F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F620EE78BE00469751 /* OrderViewController.swift */; };
+		D7F9E9C52151733900B1F15F /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5EA20EE78B500469751 /* JKSession.swift */; };
+		D7F9E9C62151733900B1F15F /* JKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF64420EE78E700469751 /* JKNavigationController.swift */; };
+		D7F9E9C72151733900B1F15F /* PickTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF61720EE78CD00469751 /* PickTimeViewController.swift */; };
+		D7F9E9C82151733900B1F15F /* PaymentInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EE41321459AE4000AA867 /* PaymentInfosViewController.swift */; };
+		D7F9E9C92151733900B1F15F /* OrderProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */; };
+		D7F9E9CA2151733900B1F15F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F120EE78BE00469751 /* PlaceViewController.swift */; };
+		D7F9E9CB2151733900B1F15F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */; };
+		D7F9E9CC2151733900B1F15F /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */; };
+		D7F9E9CD2151733900B1F15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5A220EE728900469751 /* AppDelegate.swift */; };
+		D7F9E9CE2151733900B1F15F /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7843756213401F600F0C4CF /* JKCache.swift */; };
+		D7F9E9CF2151733900B1F15F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5F720EE78BE00469751 /* MenuTableViewController.swift */; };
+		D7F9E9D02151733900B1F15F /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5DD20EE78A500469751 /* CountLabel.swift */; };
+		D7F9E9D12151733900B1F15F /* OrderOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF5ED20EE78BD00469751 /* OrderOverviewTableViewController.swift */; };
+		D7F9E9D22151733900B1F15F /* JKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8822D20F3AD9500B2F7EE /* JKNetwork.swift */; };
+		D7F9E9D32151733900B1F15F /* MarkersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60C20EE78C600469751 /* MarkersManager.swift */; };
+		D7F9E9D42151733900B1F15F /* JKMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCF60D20EE78C600469751 /* JKMarkerInfoView.swift */; };
+		D7F9E9D62151733900B1F15F /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; };
+		D7F9E9D72151733900B1F15F /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; };
+		D7F9E9D82151733900B1F15F /* Pods_Jack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3C2BF95730B1CCAAFEBDAB /* Pods_Jack.framework */; };
+		D7F9E9DA2151733900B1F15F /* Jack_logo_main@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62020EE78D900469751 /* Jack_logo_main@3x.png */; };
+		D7F9E9DB2151733900B1F15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5AB20EE728A00469751 /* LaunchScreen.storyboard */; };
+		D7F9E9DC2151733900B1F15F /* Jack_logo_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61E20EE78D900469751 /* Jack_logo_main@2x.png */; };
+		D7F9E9DD2151733900B1F15F /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729906E2137479F0041833B /* OrderTableCell.xib */; };
+		D7F9E9DE2151733900B1F15F /* marker_white_120x105@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62720EE78DA00469751 /* marker_white_120x105@1x.png */; };
+		D7F9E9DF2151733900B1F15F /* MissingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62D20EE78DA00469751 /* MissingImage@3x.png */; };
+		D7F9E9E02151733900B1F15F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E2832221444AB500D49D97 /* GoogleService-Info.plist */; };
+		D7F9E9E12151733900B1F15F /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F520EE78BE00469751 /* CategoryCell.xib */; };
+		D7F9E9E22151733900B1F15F /* PlaceHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F920EE78BE00469751 /* PlaceHeaderCell.xib */; };
+		D7F9E9E32151733900B1F15F /* marker_120x105@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62320EE78D900469751 /* marker_120x105@3x.png */; };
+		D7F9E9E42151733900B1F15F /* logo_black_and_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCBE90214D694D0053E86E /* logo_black_and_white.png */; };
+		D7F9E9E52151733900B1F15F /* marker_white_120x105@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62420EE78D900469751 /* marker_white_120x105@2x.png */; };
+		D7F9E9E62151733900B1F15F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F18AF9213C067A00A7BD9B /* Localizable.strings */; };
+		D7F9E9E72151733900B1F15F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61620EE78CD00469751 /* Home.storyboard */; };
+		D7F9E9E82151733900B1F15F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7C00FA820EE83E400072A54 /* Podfile */; };
+		D7F9E9E92151733900B1F15F /* JackWordmark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61D20EE78D900469751 /* JackWordmark@3x.png */; };
+		D7F9E9EA2151733900B1F15F /* ProductOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5FA20EE78BE00469751 /* ProductOrderCell.xib */; };
+		D7F9E9EB2151733900B1F15F /* MissingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62620EE78DA00469751 /* MissingImage.png */; };
+		D7F9E9EC2151733900B1F15F /* jackfont2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF64920EE78FE00469751 /* jackfont2.ttf */; };
+		D7F9E9ED2151733900B1F15F /* JackWordmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62C20EE78DA00469751 /* JackWordmark@2x.png */; };
+		D7F9E9EE2151733900B1F15F /* OrderOverviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5EF20EE78BE00469751 /* OrderOverviewCell.xib */; };
+		D7F9E9EF2151733900B1F15F /* Jack_logo_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62B20EE78DA00469751 /* Jack_logo_main.png */; };
+		D7F9E9F02151733900B1F15F /* JKMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60920EE78C600469751 /* JKMarkerView.xib */; };
+		D7F9E9F12151733900B1F15F /* marker_120x105@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62120EE78D900469751 /* marker_120x105@2x.png */; };
+		D7F9E9F22151733900B1F15F /* MissingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62A20EE78DA00469751 /* MissingImage@2x.png */; };
+		D7F9E9F32151733900B1F15F /* marker_white_120x105@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62520EE78D900469751 /* marker_white_120x105@3x.png */; };
+		D7F9E9F42151733900B1F15F /* Jack_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62920EE78DA00469751 /* Jack_logo.png */; };
+		D7F9E9F52151733900B1F15F /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7C3912119AAEA008DF2DF /* Auth.storyboard */; };
+		D7F9E9F62151733900B1F15F /* JKMarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF60A20EE78C600469751 /* JKMarkerInfoView.xib */; };
+		D7F9E9F72151733900B1F15F /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7776EAC214185E10069128D /* OrderProductTableCell.xib */; };
+		D7F9E9F82151733900B1F15F /* Place.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5F020EE78BE00469751 /* Place.storyboard */; };
+		D7F9E9F92151733900B1F15F /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5EE20EE78BE00469751 /* ProductCell.xib */; };
+		D7F9E9FA2151733900B1F15F /* JackWordmark.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62820EE78DA00469751 /* JackWordmark.png */; };
+		D7F9E9FB2151733900B1F15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A920EE728A00469751 /* Assets.xcassets */; };
+		D7F9E9FC2151733900B1F15F /* Jack_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF61F20EE78D900469751 /* Jack_logo@3x.png */; };
+		D7F9E9FD2151733900B1F15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF5A620EE728900469751 /* Main.storyboard */; };
+		D7F9E9FE2151733900B1F15F /* Jack_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62E20EE78DA00469751 /* Jack_logo@2x.png */; };
+		D7F9E9FF2151733900B1F15F /* marker_120x105@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7DCF62220EE78D900469751 /* marker_120x105@1x.png */; };
+		D7F9EA022151733900B1F15F /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00F9C20EE7CD800072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7F9EA032151733900B1F15F /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F8822120F3AA5800B2F7EE /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +302,34 @@
 			remoteGlobalIDString = D767ECC120F34E7F0059A370;
 			remoteInfo = JackModel;
 		};
+		D7F9E9112151687E00B1F15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C00F9620EE7CD700072A54 /* ArtUtilities.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CB80D020EE697300F69E54;
+			remoteInfo = ArtUtilities;
+		};
+		D7F9E9132151687E00B1F15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7F8821A20F3AA5800B2F7EE /* JackModel.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D767ECC120F34E7F0059A370;
+			remoteInfo = JackModel;
+		};
+		D7F9E9AD2151733900B1F15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C00F9620EE7CD700072A54 /* ArtUtilities.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CB80D020EE697300F69E54;
+			remoteInfo = ArtUtilities;
+		};
+		D7F9E9AF2151733900B1F15F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7F8821A20F3AA5800B2F7EE /* JackModel.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D767ECC120F34E7F0059A370;
+			remoteInfo = JackModel;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -158,20 +345,47 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7F9E9652151687E00B1F15F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7F9E9662151687E00B1F15F /* ArtUtilities.framework in Embed Frameworks */,
+				D7F9E9672151687E00B1F15F /* JackModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7F9EA012151733900B1F15F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7F9EA022151733900B1F15F /* ArtUtilities.framework in Embed Frameworks */,
+				D7F9EA032151733900B1F15F /* JackModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21641B43B09D818307E40CD9 /* Pods-Jack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jack/Pods-Jack.debug.xcconfig"; sourceTree = "<group>"; };
 		282F7DC0DCAD99AE22DA0931 /* Pods-Jack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jack/Pods-Jack.release.xcconfig"; sourceTree = "<group>"; };
-		8419837A1A391485A686FB87 /* libPods-Jack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A3C2BF95730B1CCAAFEBDAB /* Pods_Jack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D729906821373FFA0041833B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D729906A2137434E0041833B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
-		D729906C213745200041833B /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		D729906C213745200041833B /* CurrentOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrdersTableViewController.swift; sourceTree = "<group>"; };
 		D729906E2137479F0041833B /* OrderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableCell.xib; sourceTree = "<group>"; };
+		D73EE41321459AE4000AA867 /* PaymentInfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfosViewController.swift; sourceTree = "<group>"; };
 		D74E65AE2136A06F00DB4658 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
+		D76B6150214DA3D000F1B7CB /* PastOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastOrderTableViewController.swift; sourceTree = "<group>"; };
 		D7776EA4214178080069128D /* OrderInfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfosViewController.swift; sourceTree = "<group>"; };
 		D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductsTableViewController.swift; sourceTree = "<group>"; };
 		D7776EAC214185E10069128D /* OrderProductTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductTableCell.xib; sourceTree = "<group>"; };
+		D7776EB52142A2720069128D /* Jack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jack.entitlements; sourceTree = "<group>"; };
 		D7843756213401F600F0C4CF /* JKCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKCache.swift; sourceTree = "<group>"; };
 		D7C00F9620EE7CD700072A54 /* ArtUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArtUtilities.xcodeproj; path = ../ArtUtilities/ArtUtilities.xcodeproj; sourceTree = "<group>"; };
 		D7C00FA620EE839500072A54 /* JKLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKLocationManager.swift; sourceTree = "<group>"; };
@@ -180,6 +394,7 @@
 		D7D7C3912119AAEA008DF2DF /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		D7D7C3932119AC11008DF2DF /* APageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APageViewController.swift; sourceTree = "<group>"; };
 		D7D7C3952119F99C008DF2DF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D7DCBE90214D694D0053E86E /* logo_black_and_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_black_and_white.png; sourceTree = "<group>"; };
 		D7DCF59F20EE728900469751 /* Jack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DCF5A220EE728900469751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7DCF5A420EE728900469751 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +415,6 @@
 		D7DCF5EF20EE78BE00469751 /* OrderOverviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderOverviewCell.xib; sourceTree = "<group>"; };
 		D7DCF5F020EE78BE00469751 /* Place.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Place.storyboard; sourceTree = "<group>"; };
 		D7DCF5F120EE78BE00469751 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
-		D7DCF5F220EE78BE00469751 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		D7DCF5F320EE78BE00469751 /* OrderOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderOverviewViewController.swift; sourceTree = "<group>"; };
 		D7DCF5F420EE78BE00469751 /* PlaceOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOverviewViewController.swift; sourceTree = "<group>"; };
 		D7DCF5F520EE78BE00469751 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -240,6 +454,7 @@
 		D7DCF64120EE78E700469751 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		D7DCF64420EE78E700469751 /* JKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKNavigationController.swift; sourceTree = "<group>"; };
 		D7DCF64920EE78FE00469751 /* jackfont2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont2.ttf; sourceTree = "<group>"; };
+		D7E2832221444AB500D49D97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7F18AF8213C067A00A7BD9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D7F18AFA213C069300A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D7F18AFB213C069300A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -247,6 +462,10 @@
 		D7F8821A20F3AA5800B2F7EE /* JackModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JackModel.xcodeproj; path = ../JackModel/JackModel.xcodeproj; sourceTree = "<group>"; };
 		D7F8822C20F3AD9400B2F7EE /* JKMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKMediator.swift; sourceTree = "<group>"; };
 		D7F8822D20F3AD9500B2F7EE /* JKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKNetwork.swift; sourceTree = "<group>"; };
+		D7F9E96C2151687E00B1F15F /* Jack Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jack Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7F9E96D2151687F00B1F15F /* Jack copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Jack copy-Info.plist"; path = "/Users/arthurngovan/Documents/Jack/Jack copy-Info.plist"; sourceTree = "<absolute>"; };
+		D7F9EA082151733900B1F15F /* Jack Stage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jack Stage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7F9EA092151733A00B1F15F /* Jack copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Jack copy2-Info.plist"; path = "/Users/arthurngovan/Documents/Jack/Jack copy2-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,8 +474,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F8822520F3AA6B00B2F7EE /* JackModel.framework in Frameworks */,
-				80359F453DB4529325F636DA /* libPods-Jack.a in Frameworks */,
 				D7C00F9F20EE7D1100072A54 /* ArtUtilities.framework in Frameworks */,
+				88C432F98E9AB1538EA3AADE /* Pods_Jack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +490,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7F9E9392151687E00B1F15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E93A2151687E00B1F15F /* JackModel.framework in Frameworks */,
+				D7F9E93B2151687E00B1F15F /* ArtUtilities.framework in Frameworks */,
+				D7F9E93C2151687E00B1F15F /* Pods_Jack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7F9E9D52151733900B1F15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E9D62151733900B1F15F /* JackModel.framework in Frameworks */,
+				D7F9E9D72151733900B1F15F /* ArtUtilities.framework in Frameworks */,
+				D7F9E9D82151733900B1F15F /* Pods_Jack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +528,7 @@
 		537AC585B7C45BBE6721ED5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8419837A1A391485A686FB87 /* libPods-Jack.a */,
+				4A3C2BF95730B1CCAAFEBDAB /* Pods_Jack.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,6 +566,8 @@
 				D7DCF5A020EE728900469751 /* Products */,
 				44D44C9D60A6F93F7317D3A8 /* Pods */,
 				537AC585B7C45BBE6721ED5C /* Frameworks */,
+				D7F9E96D2151687F00B1F15F /* Jack copy-Info.plist */,
+				D7F9EA092151733A00B1F15F /* Jack copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,6 +577,8 @@
 				D7DCF59F20EE728900469751 /* Jack.app */,
 				D7DCF5B320EE728A00469751 /* JackTests.xctest */,
 				D7DCF5BE20EE728A00469751 /* JackUITests.xctest */,
+				D7F9E96C2151687E00B1F15F /* Jack Dev.app */,
+				D7F9EA082151733900B1F15F /* Jack Stage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,11 +586,13 @@
 		D7DCF5A120EE728900469751 /* Jack */ = {
 			isa = PBXGroup;
 			children = (
+				D7DCF5A220EE728900469751 /* AppDelegate.swift */,
+				D7E2832221444AB500D49D97 /* GoogleService-Info.plist */,
+				D7776EB52142A2720069128D /* Jack.entitlements */,
 				D7DCF64120EE78E700469751 /* DataGenerator.swift */,
 				D7DCF64420EE78E700469751 /* JKNavigationController.swift */,
 				D7DCF5D120EE729F00469751 /* Ressources */,
 				D7DCF5D020EE729200469751 /* Sources */,
-				D7DCF5A220EE728900469751 /* AppDelegate.swift */,
 				D7DCF5A420EE728900469751 /* StartViewController.swift */,
 				D7DCF5A620EE728900469751 /* Main.storyboard */,
 				D7DCF5A920EE728A00469751 /* Assets.xcassets */,
@@ -387,6 +632,7 @@
 				D7DCF5D520EE72E300469751 /* Business */,
 				D7DCF5D420EE72DC00469751 /* Map */,
 				D7DCF5D320EE72B700469751 /* Home */,
+				D73EE41321459AE4000AA867 /* PaymentInfosViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -403,6 +649,7 @@
 		D7DCF5D220EE72AE00469751 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D7DCBE90214D694D0053E86E /* logo_black_and_white.png */,
 				D7DCF62B20EE78DA00469751 /* Jack_logo_main.png */,
 				D7DCF61E20EE78D900469751 /* Jack_logo_main@2x.png */,
 				D7DCF62020EE78D900469751 /* Jack_logo_main@3x.png */,
@@ -459,7 +706,6 @@
 				D7DCF5EF20EE78BE00469751 /* OrderOverviewCell.xib */,
 				D7DCF5ED20EE78BD00469751 /* OrderOverviewTableViewController.swift */,
 				D7DCF5F320EE78BE00469751 /* OrderOverviewViewController.swift */,
-				D7DCF5F220EE78BE00469751 /* OrderTableViewController.swift */,
 				D7DCF5F620EE78BE00469751 /* OrderViewController.swift */,
 				D7DCF5F020EE78BE00469751 /* Place.storyboard */,
 				D7DCF5F920EE78BE00469751 /* PlaceHeaderCell.xib */,
@@ -475,11 +721,12 @@
 		D7DCF5D620EE72ED00469751 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D729906C213745200041833B /* OrdersTableViewController.swift */,
+				D729906C213745200041833B /* CurrentOrdersTableViewController.swift */,
 				D729906E2137479F0041833B /* OrderTableCell.xib */,
 				D7776EA4214178080069128D /* OrderInfosViewController.swift */,
 				D7776EA621417DBF0069128D /* OrderProductsTableViewController.swift */,
 				D7776EAC214185E10069128D /* OrderProductTableCell.xib */,
+				D76B6150214DA3D000F1B7CB /* PastOrderTableViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -533,6 +780,7 @@
 				D7DCF59D20EE728900469751 /* Resources */,
 				93AFB0F85C6257FBFA3467A7 /* [CP] Copy Pods Resources */,
 				D7C00FA320EE7D1100072A54 /* Embed Frameworks */,
+				8CC184939A8D854AC5BDB4F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,6 +829,52 @@
 			productReference = D7DCF5BE20EE728A00469751 /* JackUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D7F9E90F2151687E00B1F15F /* Jack Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7F9E9692151687E00B1F15F /* Build configuration list for PBXNativeTarget "Jack Dev" */;
+			buildPhases = (
+				D7F9E9142151687E00B1F15F /* [CP] Check Pods Manifest.lock */,
+				D7F9E9152151687E00B1F15F /* Sources */,
+				D7F9E9392151687E00B1F15F /* Frameworks */,
+				D7F9E93D2151687E00B1F15F /* Resources */,
+				D7F9E9642151687E00B1F15F /* [CP] Copy Pods Resources */,
+				D7F9E9652151687E00B1F15F /* Embed Frameworks */,
+				D7F9E9682151687E00B1F15F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7F9E9102151687E00B1F15F /* PBXTargetDependency */,
+				D7F9E9122151687E00B1F15F /* PBXTargetDependency */,
+			);
+			name = "Jack Dev";
+			productName = Jack;
+			productReference = D7F9E96C2151687E00B1F15F /* Jack Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7F9E9AB2151733900B1F15F /* Jack Stage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7F9EA052151733900B1F15F /* Build configuration list for PBXNativeTarget "Jack Stage" */;
+			buildPhases = (
+				D7F9E9B02151733900B1F15F /* [CP] Check Pods Manifest.lock */,
+				D7F9E9B12151733900B1F15F /* Sources */,
+				D7F9E9D52151733900B1F15F /* Frameworks */,
+				D7F9E9D92151733900B1F15F /* Resources */,
+				D7F9EA002151733900B1F15F /* [CP] Copy Pods Resources */,
+				D7F9EA012151733900B1F15F /* Embed Frameworks */,
+				D7F9EA042151733900B1F15F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7F9E9AC2151733900B1F15F /* PBXTargetDependency */,
+				D7F9E9AE2151733900B1F15F /* PBXTargetDependency */,
+			);
+			name = "Jack Stage";
+			productName = Jack;
+			productReference = D7F9EA082151733900B1F15F /* Jack Stage.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -593,6 +887,11 @@
 				TargetAttributes = {
 					D7DCF59E20EE728900469751 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D7DCF5B220EE728A00469751 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -631,6 +930,8 @@
 				D7DCF59E20EE728900469751 /* Jack */,
 				D7DCF5B220EE728A00469751 /* JackTests */,
 				D7DCF5BD20EE728A00469751 /* JackUITests */,
+				D7F9E9AB2151733900B1F15F /* Jack Stage */,
+				D7F9E90F2151687E00B1F15F /* Jack Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -677,9 +978,11 @@
 				D729906F2137479F0041833B /* OrderTableCell.xib in Resources */,
 				D7DCF63920EE78DA00469751 /* marker_white_120x105@1x.png in Resources */,
 				D7DCF63F20EE78DA00469751 /* MissingImage@3x.png in Resources */,
+				D7E2832521444AB500D49D97 /* GoogleService-Info.plist in Resources */,
 				D7DCF60320EE78BE00469751 /* CategoryCell.xib in Resources */,
 				D7DCF60720EE78BE00469751 /* PlaceHeaderCell.xib in Resources */,
 				D7DCF63520EE78DA00469751 /* marker_120x105@3x.png in Resources */,
+				D7DCBE93214D694D0053E86E /* logo_black_and_white.png in Resources */,
 				D7DCF63620EE78DA00469751 /* marker_white_120x105@2x.png in Resources */,
 				D7F18AF7213C067A00A7BD9B /* Localizable.strings in Resources */,
 				D7DCF61A20EE78CD00469751 /* Home.storyboard in Resources */,
@@ -724,9 +1027,133 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7F9E93D2151687E00B1F15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E93E2151687E00B1F15F /* Jack_logo_main@3x.png in Resources */,
+				D7F9E93F2151687E00B1F15F /* LaunchScreen.storyboard in Resources */,
+				D7F9E9402151687E00B1F15F /* Jack_logo_main@2x.png in Resources */,
+				D7F9E9412151687E00B1F15F /* OrderTableCell.xib in Resources */,
+				D7F9E9422151687E00B1F15F /* marker_white_120x105@1x.png in Resources */,
+				D7F9E9432151687E00B1F15F /* MissingImage@3x.png in Resources */,
+				D7F9E9442151687E00B1F15F /* GoogleService-Info.plist in Resources */,
+				D7F9E9452151687E00B1F15F /* CategoryCell.xib in Resources */,
+				D7F9E9462151687E00B1F15F /* PlaceHeaderCell.xib in Resources */,
+				D7F9E9472151687E00B1F15F /* marker_120x105@3x.png in Resources */,
+				D7F9E9482151687E00B1F15F /* logo_black_and_white.png in Resources */,
+				D7F9E9492151687E00B1F15F /* marker_white_120x105@2x.png in Resources */,
+				D7F9E94A2151687E00B1F15F /* Localizable.strings in Resources */,
+				D7F9E94B2151687E00B1F15F /* Home.storyboard in Resources */,
+				D7F9E94C2151687E00B1F15F /* Podfile in Resources */,
+				D7F9E94D2151687E00B1F15F /* JackWordmark@3x.png in Resources */,
+				D7F9E94E2151687E00B1F15F /* ProductOrderCell.xib in Resources */,
+				D7F9E94F2151687E00B1F15F /* MissingImage.png in Resources */,
+				D7F9E9502151687E00B1F15F /* jackfont2.ttf in Resources */,
+				D7F9E9512151687E00B1F15F /* JackWordmark@2x.png in Resources */,
+				D7F9E9522151687E00B1F15F /* OrderOverviewCell.xib in Resources */,
+				D7F9E9532151687E00B1F15F /* Jack_logo_main.png in Resources */,
+				D7F9E9542151687E00B1F15F /* JKMarkerView.xib in Resources */,
+				D7F9E9552151687E00B1F15F /* marker_120x105@2x.png in Resources */,
+				D7F9E9562151687E00B1F15F /* MissingImage@2x.png in Resources */,
+				D7F9E9572151687E00B1F15F /* marker_white_120x105@3x.png in Resources */,
+				D7F9E9582151687E00B1F15F /* Jack_logo.png in Resources */,
+				D7F9E9592151687E00B1F15F /* Auth.storyboard in Resources */,
+				D7F9E95A2151687E00B1F15F /* JKMarkerInfoView.xib in Resources */,
+				D7F9E95B2151687E00B1F15F /* OrderProductTableCell.xib in Resources */,
+				D7F9E95C2151687E00B1F15F /* Place.storyboard in Resources */,
+				D7F9E95D2151687E00B1F15F /* ProductCell.xib in Resources */,
+				D7F9E95E2151687E00B1F15F /* JackWordmark.png in Resources */,
+				D7F9E95F2151687E00B1F15F /* Assets.xcassets in Resources */,
+				D7F9E9602151687E00B1F15F /* Jack_logo@3x.png in Resources */,
+				D7F9E9612151687E00B1F15F /* Main.storyboard in Resources */,
+				D7F9E9622151687E00B1F15F /* Jack_logo@2x.png in Resources */,
+				D7F9E9632151687E00B1F15F /* marker_120x105@1x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7F9E9D92151733900B1F15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E9DA2151733900B1F15F /* Jack_logo_main@3x.png in Resources */,
+				D7F9E9DB2151733900B1F15F /* LaunchScreen.storyboard in Resources */,
+				D7F9E9DC2151733900B1F15F /* Jack_logo_main@2x.png in Resources */,
+				D7F9E9DD2151733900B1F15F /* OrderTableCell.xib in Resources */,
+				D7F9E9DE2151733900B1F15F /* marker_white_120x105@1x.png in Resources */,
+				D7F9E9DF2151733900B1F15F /* MissingImage@3x.png in Resources */,
+				D7F9E9E02151733900B1F15F /* GoogleService-Info.plist in Resources */,
+				D7F9E9E12151733900B1F15F /* CategoryCell.xib in Resources */,
+				D7F9E9E22151733900B1F15F /* PlaceHeaderCell.xib in Resources */,
+				D7F9E9E32151733900B1F15F /* marker_120x105@3x.png in Resources */,
+				D7F9E9E42151733900B1F15F /* logo_black_and_white.png in Resources */,
+				D7F9E9E52151733900B1F15F /* marker_white_120x105@2x.png in Resources */,
+				D7F9E9E62151733900B1F15F /* Localizable.strings in Resources */,
+				D7F9E9E72151733900B1F15F /* Home.storyboard in Resources */,
+				D7F9E9E82151733900B1F15F /* Podfile in Resources */,
+				D7F9E9E92151733900B1F15F /* JackWordmark@3x.png in Resources */,
+				D7F9E9EA2151733900B1F15F /* ProductOrderCell.xib in Resources */,
+				D7F9E9EB2151733900B1F15F /* MissingImage.png in Resources */,
+				D7F9E9EC2151733900B1F15F /* jackfont2.ttf in Resources */,
+				D7F9E9ED2151733900B1F15F /* JackWordmark@2x.png in Resources */,
+				D7F9E9EE2151733900B1F15F /* OrderOverviewCell.xib in Resources */,
+				D7F9E9EF2151733900B1F15F /* Jack_logo_main.png in Resources */,
+				D7F9E9F02151733900B1F15F /* JKMarkerView.xib in Resources */,
+				D7F9E9F12151733900B1F15F /* marker_120x105@2x.png in Resources */,
+				D7F9E9F22151733900B1F15F /* MissingImage@2x.png in Resources */,
+				D7F9E9F32151733900B1F15F /* marker_white_120x105@3x.png in Resources */,
+				D7F9E9F42151733900B1F15F /* Jack_logo.png in Resources */,
+				D7F9E9F52151733900B1F15F /* Auth.storyboard in Resources */,
+				D7F9E9F62151733900B1F15F /* JKMarkerInfoView.xib in Resources */,
+				D7F9E9F72151733900B1F15F /* OrderProductTableCell.xib in Resources */,
+				D7F9E9F82151733900B1F15F /* Place.storyboard in Resources */,
+				D7F9E9F92151733900B1F15F /* ProductCell.xib in Resources */,
+				D7F9E9FA2151733900B1F15F /* JackWordmark.png in Resources */,
+				D7F9E9FB2151733900B1F15F /* Assets.xcassets in Resources */,
+				D7F9E9FC2151733900B1F15F /* Jack_logo@3x.png in Resources */,
+				D7F9E9FD2151733900B1F15F /* Main.storyboard in Resources */,
+				D7F9E9FE2151733900B1F15F /* Jack_logo@2x.png in Resources */,
+				D7F9E9FF2151733900B1F15F /* marker_120x105@1x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8CC184939A8D854AC5BDB4F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		93AFB0F85C6257FBFA3467A7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -765,6 +1192,150 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D7F9E9142151687E00B1F15F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F9E9642151687E00B1F15F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F9E9682151687E00B1F15F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F9E9B02151733900B1F15F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F9EA002151733900B1F15F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F9EA042151733900B1F15F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jack/Pods-Jack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -782,18 +1353,19 @@
 				D7CDEB64213EC92B00D97758 /* JKWebViewController.swift in Sources */,
 				D7DCF64520EE78E800469751 /* DataGenerator.swift in Sources */,
 				D7D7C3942119AC11008DF2DF /* APageViewController.swift in Sources */,
+				D76B6151214DA3D000F1B7CB /* PastOrderTableViewController.swift in Sources */,
 				D7C00FA720EE839500072A54 /* JKLocationManager.swift in Sources */,
 				D7DCF60620EE78BE00469751 /* ProductOverviewViewController.swift in Sources */,
 				D7DCF5A520EE728900469751 /* StartViewController.swift in Sources */,
 				D7DCF60220EE78BE00469751 /* PlaceOverviewViewController.swift in Sources */,
 				D7DCF61C20EE78CD00469751 /* HomeViewController.swift in Sources */,
-				D729906D213745200041833B /* OrdersTableViewController.swift in Sources */,
+				D729906D213745200041833B /* CurrentOrdersTableViewController.swift in Sources */,
 				D7DCF60120EE78BE00469751 /* OrderOverviewViewController.swift in Sources */,
 				D7DCF60420EE78BE00469751 /* OrderViewController.swift in Sources */,
 				D7DCF5EC20EE78B500469751 /* JKSession.swift in Sources */,
 				D7DCF64820EE78E800469751 /* JKNavigationController.swift in Sources */,
 				D7DCF61B20EE78CD00469751 /* PickTimeViewController.swift in Sources */,
-				D7DCF60020EE78BE00469751 /* OrderTableViewController.swift in Sources */,
+				D73EE41421459AE4000AA867 /* PaymentInfosViewController.swift in Sources */,
 				D7776EA721417DBF0069128D /* OrderProductsTableViewController.swift in Sources */,
 				D7DCF5FF20EE78BE00469751 /* PlaceViewController.swift in Sources */,
 				D7D7C3962119F99C008DF2DF /* RegisterViewController.swift in Sources */,
@@ -825,6 +1397,90 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7F9E9152151687E00B1F15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E9162151687E00B1F15F /* OrderInfosViewController.swift in Sources */,
+				D7F9E9172151687E00B1F15F /* MapViewController.swift in Sources */,
+				D7F9E9182151687E00B1F15F /* UserProfileViewController.swift in Sources */,
+				D7F9E9192151687E00B1F15F /* JKMediator.swift in Sources */,
+				D7F9E91A2151687E00B1F15F /* OrdersViewController.swift in Sources */,
+				D7F9E91B2151687E00B1F15F /* JKMarkerView.swift in Sources */,
+				D7F9E91C2151687E00B1F15F /* GoogleMapViewController.swift in Sources */,
+				D7F9E91D2151687E00B1F15F /* JKWebViewController.swift in Sources */,
+				D7F9E91E2151687E00B1F15F /* DataGenerator.swift in Sources */,
+				D7F9E91F2151687E00B1F15F /* APageViewController.swift in Sources */,
+				D7F9E9202151687E00B1F15F /* PastOrderTableViewController.swift in Sources */,
+				D7F9E9212151687E00B1F15F /* JKLocationManager.swift in Sources */,
+				D7F9E9222151687E00B1F15F /* ProductOverviewViewController.swift in Sources */,
+				D7F9E9232151687E00B1F15F /* StartViewController.swift in Sources */,
+				D7F9E9242151687E00B1F15F /* PlaceOverviewViewController.swift in Sources */,
+				D7F9E9252151687E00B1F15F /* HomeViewController.swift in Sources */,
+				D7F9E9262151687E00B1F15F /* CurrentOrdersTableViewController.swift in Sources */,
+				D7F9E9272151687E00B1F15F /* OrderOverviewViewController.swift in Sources */,
+				D7F9E9282151687E00B1F15F /* OrderViewController.swift in Sources */,
+				D7F9E9292151687E00B1F15F /* JKSession.swift in Sources */,
+				D7F9E92A2151687E00B1F15F /* JKNavigationController.swift in Sources */,
+				D7F9E92B2151687E00B1F15F /* PickTimeViewController.swift in Sources */,
+				D7F9E92C2151687E00B1F15F /* PaymentInfosViewController.swift in Sources */,
+				D7F9E92D2151687E00B1F15F /* OrderProductsTableViewController.swift in Sources */,
+				D7F9E92E2151687E00B1F15F /* PlaceViewController.swift in Sources */,
+				D7F9E92F2151687E00B1F15F /* RegisterViewController.swift in Sources */,
+				D7F9E9302151687E00B1F15F /* AuthentificationViewController.swift in Sources */,
+				D7F9E9312151687E00B1F15F /* AppDelegate.swift in Sources */,
+				D7F9E9322151687E00B1F15F /* JKCache.swift in Sources */,
+				D7F9E9332151687E00B1F15F /* MenuTableViewController.swift in Sources */,
+				D7F9E9342151687E00B1F15F /* CountLabel.swift in Sources */,
+				D7F9E9352151687E00B1F15F /* OrderOverviewTableViewController.swift in Sources */,
+				D7F9E9362151687E00B1F15F /* JKNetwork.swift in Sources */,
+				D7F9E9372151687E00B1F15F /* MarkersManager.swift in Sources */,
+				D7F9E9382151687E00B1F15F /* JKMarkerInfoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7F9E9B12151733900B1F15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7F9E9B22151733900B1F15F /* OrderInfosViewController.swift in Sources */,
+				D7F9E9B32151733900B1F15F /* MapViewController.swift in Sources */,
+				D7F9E9B42151733900B1F15F /* UserProfileViewController.swift in Sources */,
+				D7F9E9B52151733900B1F15F /* JKMediator.swift in Sources */,
+				D7F9E9B62151733900B1F15F /* OrdersViewController.swift in Sources */,
+				D7F9E9B72151733900B1F15F /* JKMarkerView.swift in Sources */,
+				D7F9E9B82151733900B1F15F /* GoogleMapViewController.swift in Sources */,
+				D7F9E9B92151733900B1F15F /* JKWebViewController.swift in Sources */,
+				D7F9E9BA2151733900B1F15F /* DataGenerator.swift in Sources */,
+				D7F9E9BB2151733900B1F15F /* APageViewController.swift in Sources */,
+				D7F9E9BC2151733900B1F15F /* PastOrderTableViewController.swift in Sources */,
+				D7F9E9BD2151733900B1F15F /* JKLocationManager.swift in Sources */,
+				D7F9E9BE2151733900B1F15F /* ProductOverviewViewController.swift in Sources */,
+				D7F9E9BF2151733900B1F15F /* StartViewController.swift in Sources */,
+				D7F9E9C02151733900B1F15F /* PlaceOverviewViewController.swift in Sources */,
+				D7F9E9C12151733900B1F15F /* HomeViewController.swift in Sources */,
+				D7F9E9C22151733900B1F15F /* CurrentOrdersTableViewController.swift in Sources */,
+				D7F9E9C32151733900B1F15F /* OrderOverviewViewController.swift in Sources */,
+				D7F9E9C42151733900B1F15F /* OrderViewController.swift in Sources */,
+				D7F9E9C52151733900B1F15F /* JKSession.swift in Sources */,
+				D7F9E9C62151733900B1F15F /* JKNavigationController.swift in Sources */,
+				D7F9E9C72151733900B1F15F /* PickTimeViewController.swift in Sources */,
+				D7F9E9C82151733900B1F15F /* PaymentInfosViewController.swift in Sources */,
+				D7F9E9C92151733900B1F15F /* OrderProductsTableViewController.swift in Sources */,
+				D7F9E9CA2151733900B1F15F /* PlaceViewController.swift in Sources */,
+				D7F9E9CB2151733900B1F15F /* RegisterViewController.swift in Sources */,
+				D7F9E9CC2151733900B1F15F /* AuthentificationViewController.swift in Sources */,
+				D7F9E9CD2151733900B1F15F /* AppDelegate.swift in Sources */,
+				D7F9E9CE2151733900B1F15F /* JKCache.swift in Sources */,
+				D7F9E9CF2151733900B1F15F /* MenuTableViewController.swift in Sources */,
+				D7F9E9D02151733900B1F15F /* CountLabel.swift in Sources */,
+				D7F9E9D12151733900B1F15F /* OrderOverviewTableViewController.swift in Sources */,
+				D7F9E9D22151733900B1F15F /* JKNetwork.swift in Sources */,
+				D7F9E9D32151733900B1F15F /* MarkersManager.swift in Sources */,
+				D7F9E9D42151733900B1F15F /* JKMarkerInfoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -847,6 +1503,26 @@
 			isa = PBXTargetDependency;
 			name = JackModel;
 			targetProxy = D7F8822720F3AA6B00B2F7EE /* PBXContainerItemProxy */;
+		};
+		D7F9E9102151687E00B1F15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ArtUtilities;
+			targetProxy = D7F9E9112151687E00B1F15F /* PBXContainerItemProxy */;
+		};
+		D7F9E9122151687E00B1F15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JackModel;
+			targetProxy = D7F9E9132151687E00B1F15F /* PBXContainerItemProxy */;
+		};
+		D7F9E9AC2151733900B1F15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ArtUtilities;
+			targetProxy = D7F9E9AD2151733900B1F15F /* PBXContainerItemProxy */;
+		};
+		D7F9E9AE2151733900B1F15F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JackModel;
+			targetProxy = D7F9E9AF2151733900B1F15F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1003,6 +1679,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
@@ -1027,6 +1704,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
@@ -1123,6 +1801,108 @@
 			};
 			name = Release;
 		};
+		D7F9E96A2151687E00B1F15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21641B43B09D818307E40CD9 /* Pods-Jack.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = "Jack copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEV";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7F9E96B2151687E00B1F15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 282F7DC0DCAD99AE22DA0931 /* Pods-Jack.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = "Jack copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEV";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7F9EA062151733900B1F15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21641B43B09D818307E40CD9 /* Pods-Jack.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = "Jack copy2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway-stage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7F9EA072151733900B1F15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 282F7DC0DCAD99AE22DA0931 /* Pods-Jack.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jack/Jack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = "Jack copy2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.jacktakeway-stage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1158,6 +1938,24 @@
 			buildConfigurations = (
 				D7DCF5CE20EE728A00469751 /* Debug */,
 				D7DCF5CF20EE728A00469751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7F9E9692151687E00B1F15F /* Build configuration list for PBXNativeTarget "Jack Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7F9E96A2151687E00B1F15F /* Debug */,
+				D7F9E96B2151687E00B1F15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7F9EA052151733900B1F15F /* Build configuration list for PBXNativeTarget "Jack Stage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7F9EA062151733900B1F15F /* Debug */,
+				D7F9EA072151733900B1F15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

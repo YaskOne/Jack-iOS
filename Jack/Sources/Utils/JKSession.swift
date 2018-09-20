@@ -9,10 +9,16 @@
 import Foundation
 import CoreLocation
 import JackModel
+import Stripe
+
+let userLoggedNotification = Notification.Name("userLoggedNotification")
 
 class JKSession {
     
     static let shared = JKSession()
+    
+    var fcmToken: String?
+    var token: String?
     
     let defaults: UserDefaults = {
         return UserDefaults.standard
@@ -31,6 +37,7 @@ class JKSession {
             if let newValue = newValue {
                 userId = newValue.id
                 JKUserCache.shared.addObject(id: newValue.id, object: newValue)
+                userLogged()
             }
         }
     }
@@ -44,6 +51,7 @@ class JKSession {
             userId = id
             loadUser()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogged), name: userLoggedNotification, object: nil)
     }
     
     func saveSession() {
@@ -63,5 +71,34 @@ class JKSession {
     
     func loadUser() {
         JKUserCache.shared.loadInCache(ids: [userId])
+    }
+    
+    @objc func userLogged() {
+        JKMediator.updateUser(id: userId, fcmToken: fcmToken, success: {}, failure: {})
+    }
+    
+    func isLogged(delegate: AuthentificationDelegate? = nil) -> Bool {
+
+        if JKSession.shared.user == nil {
+            if let controller = authStoryboard.instantiateViewController(withIdentifier: "AuthentificationViewController") as? AuthentificationViewController {
+                controller.delegate = delegate
+                UIApplication.topViewController()?.navigationController?.pushViewController(controller, animated: true)
+            }
+            return false
+        }
+        return true
+    }
+        
+    func isPaymentAuthorized(delegate: STPAddCardViewControllerDelegate) -> Bool {
+        if let user = JKSession.shared.user, user.stripeCustomerId.isEmpty, let vc = delegate as? UIViewController {
+            
+            let addCardViewController = STPAddCardViewController()
+            addCardViewController.delegate = delegate
+            
+            vc.navigationController?.setNavigationBarHidden(false, animated: true)
+            vc.navigationController?.pushViewController(addCardViewController, animated: true)
+            return false
+        }
+        return true
     }
 }

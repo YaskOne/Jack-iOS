@@ -21,24 +21,9 @@ class MapViewController: APresenterViewController {
     @IBOutlet weak var safeArea: UIView!
     @IBOutlet weak var safeAreaTopConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var pickTimeButton: AUButton!
-    
-    @IBOutlet weak var pickupTimeLabel: UILabel!
-    @IBOutlet weak var pickupTimeContainer: UIView!
-    
-    var hasSelectedPickupTime: Bool {
-        get {
-            return JKSession.shared.order?.pickupDate != nil
-        }
-        set {
-            pickupTimeContainer.isUserInteractionEnabled = newValue
-            pickupTimeContainer.alpha = newValue ? 1 : 0
-            pickTimeButton.isUserInteractionEnabled = !newValue
-            pickTimeButton.alpha = !newValue ? 1 : 0
-        }
-    }
-    
     var mapController: GoogleMapViewController?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,13 +99,10 @@ class MapViewController: APresenterViewController {
             controller.modalPresentationStyle = UIModalPresentationStyle.custom
             controller.transitioningDelegate = self
             
+            
             controller.placeId = id
             self.present(controller, animated: true, completion: nil)
         }
-    }
-    @IBAction func cancelPickupTimeTapped(_ sender: Any) {
-        JKSession.shared.order = nil
-        hasSelectedPickupTime = false
     }
     
     @IBAction func choosePickupItemTapped(_ sender: Any) {
@@ -146,13 +128,17 @@ class MapViewController: APresenterViewController {
     }
     
     @IBAction func profileButtonTapped(_ sender: Any) {
-        let pvc = homeStoryboard.instantiateViewController(withIdentifier: "UserProfileViewController") as UIViewController
         
-        pvc.modalPresentationStyle = UIModalPresentationStyle.custom
-        pvc.transitioningDelegate = self
-        pvc.view.backgroundColor = UIColor.red
+        AUToastController.shared.toast(text: "message1", type: ToastType.info)
+//        ToastController.shared.toast(text: "message2", type: ToastType.info, view: self.view)
         
-        self.present(pvc, animated: true, completion: nil)
+//        let pvc = homeStoryboard.instantiateViewController(withIdentifier: "UserProfileViewController") as UIViewController
+//        
+//        pvc.modalPresentationStyle = UIModalPresentationStyle.custom
+//        pvc.transitioningDelegate = self
+//        pvc.view.backgroundColor = UIColor.red
+//        
+//        self.present(pvc, animated: true, completion: nil)
     }
 }
 
@@ -175,6 +161,8 @@ extension MapViewController {
 extension MapViewController: JKLocationManagerProtocol {
     func userLocationChanged() {
         JKSession.shared.lastPos = JKLocationManager.shared.lastLocation
+        
+        mapController?.updateUserPosition()
     }
 }
 
@@ -184,9 +172,9 @@ extension MapViewController: TimePickerDelegate {
         let hoursSinceNow = Int(timeIntervalSinceNow / 3600)
         let minutesSinceNow = Int((Int(timeIntervalSinceNow) - (hoursSinceNow * 3600)) / 60)
         
-        pickupTimeLabel.text = "Restaurants disponibles dans \(hoursSinceNow)h\(minutesSinceNow)"
-        hasSelectedPickupTime = true
-        
+//        pickupTimeLabel.text = "Restaurants disponibles dans \(hoursSinceNow)h\(minutesSinceNow)"
+//        hasSelectedPickupTime = true
+//        
         //        JKSession.shared.order = JKBuildOrder.init(pickupDate: date, )
     }
 }

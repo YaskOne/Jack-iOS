@@ -40,36 +40,36 @@ class JKMediator {
         }, failure: failure)
     }
     
-    // Fetch visible business request
-    static func fetchBusiness(boundaries: JKBoundaries, success: @escaping (Array<JKBusiness>) -> Void, failure: @escaping () -> Void) {
-        var params: [String: Any] = [:]
-
-        params[JKKeys.nearLeftLatitude] = boundaries.nearLeft.latitude
-        params[JKKeys.nearLeftLongitude] = boundaries.nearLeft.longitude
-        params[JKKeys.farRightLatitude] = boundaries.farRight.latitude
-        params[JKKeys.farRightLongitude] = boundaries.farRight.longitude
-
-        let _ = JKNetwork.shared.query(path: "business/area", method: .get, parameters: params, success: { json in
-            do {
-                var businesses: Array<JKBusiness> = Array<JKBusiness>()
-
-                guard let array = json.dictionaryObject?[JKKeys.businesses] as? Array<[String: Any]> else {
+        // Fetch visible business request
+        static func fetchBusiness(boundaries: JKBoundaries, success: @escaping (Array<JKBusiness>) -> Void, failure: @escaping () -> Void) {
+            var params: [String: Any] = [:]
+    
+            params[JKKeys.nearLeftLatitude] = boundaries.nearLeft.latitude
+            params[JKKeys.nearLeftLongitude] = boundaries.nearLeft.longitude
+            params[JKKeys.farRightLatitude] = boundaries.farRight.latitude
+            params[JKKeys.farRightLongitude] = boundaries.farRight.longitude
+    
+            let _ = JKNetwork.shared.query(path: "business/", method: .get, parameters: params, success: { json in
+                do {
+                    var businesses: Array<JKBusiness> = Array<JKBusiness>()
+    
+                    guard let array = json.dictionaryObject?[JKKeys.businesses] as? Array<[String: Any]> else {
+                        failure()
+                        return
+                    }
+    
+                    for value in array {
+                        let business = try JKBusiness.init(args: value)
+                        JKBusinessCache.shared.addObject(id: business.id, object: business)
+                        businesses.append(business)
+                    }
+                    success(businesses)
+                } catch {
                     failure()
-                    return
                 }
-
-                for value in array {
-                    let business = try JKBusiness.init(args: value)
-                    JKBusinessCache.shared.addObject(id: business.id, object: business)
-                    businesses.append(business)
-                }
-                success(businesses)
-            } catch {
-                failure()
-            }
-        }, failure: failure)
-    }
-
+            }, failure: failure)
+        }
+    
     // Fetch business stockes
     static func fetchBusinessStocks(id: UInt, success: @escaping ([UInt: [UInt]]) -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
@@ -309,6 +309,7 @@ class JKMediator {
         
         params[JKKeys.email] = email
         params[JKKeys.password] = password
+        params[JKKeys.fcmToken] = JKSession.shared.fcmToken
         
         let _ = JKNetwork.shared.query(path: "user/log", method: .get, parameters: params, success: { json in
             do {
@@ -366,7 +367,7 @@ class JKMediator {
         }, failure: failure)
     }
     
-    static func updateOrder(orderId: UInt, userId: UInt, status: String? = nil, state: String? = nil, canceled: Bool? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+    static func updateOrder(orderId: UInt, userId: UInt, status: Int? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
         
         params[JKKeys.orderId] = orderId
@@ -374,12 +375,6 @@ class JKMediator {
         
         if let status = status {
             params[JKKeys.status] = status
-        }
-        if let state = state {
-            params[JKKeys.state] = state
-        }
-        if let canceled = canceled {
-            params[JKKeys.canceled] = canceled
         }
         
         let _ = JKNetwork.shared.query(path: "order/update", method: .post, parameters: params, success: { json in
@@ -420,7 +415,7 @@ class JKMediator {
         }, failure: failure)
     }
     
-    static func updateUser(id: UInt, name: String? = nil, email: String? = nil, password: String? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+    static func updateUser(id: UInt, name: String? = nil, email: String? = nil, password: String? = nil, fcmToken: String? = nil, stripeKey: String? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
         
         params[JKKeys.id] = id
@@ -432,6 +427,12 @@ class JKMediator {
         }
         if let password = password {
             params[JKKeys.password] = password
+        }
+        if let fcmToken = fcmToken {
+            params[JKKeys.fcmToken] = fcmToken
+        }
+        if let stripeKey = stripeKey {
+            params[JKKeys.stripeKey] = stripeKey
         }
         
         let _ = JKNetwork.shared.query(path: "user/update", method: .post, parameters: params, success: { json in
@@ -453,7 +454,7 @@ class JKMediator {
     }
     
     // Create business request
-    static func updateBusiness(id: UInt, email: String? = nil, name: String? = nil, password: String? = nil, address: String? = nil, type: String? = nil, description: String? = nil, url: String? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+    static func updateBusiness(id: UInt, email: String? = nil, name: String? = nil, password: String? = nil, address: String? = nil, type: String? = nil, description: String? = nil, url: String? = nil, fcmToken: String? = nil, defaultPreparationDuration: Double? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
         
         params[JKKeys.id] = id
@@ -478,6 +479,12 @@ class JKMediator {
         if let url = url {
             params[JKKeys.url] = url
         }
+        if let fcmToken = fcmToken {
+            params[JKKeys.fcmToken] = fcmToken
+        }
+        if let defaultPreparationDuration = defaultPreparationDuration {
+            params[JKKeys.defaultPreparationDuration] = defaultPreparationDuration
+        }
         
         let _ = JKNetwork.shared.query(path: "business/update", method: .post, parameters: params, success: { json in
             do {
@@ -496,6 +503,89 @@ class JKMediator {
             }
         }, failure: failure)
     }
+    
+    // Create business request
+    static func updateCategory(id: UInt, name: String, success: @escaping () -> Void, failure: @escaping () -> Void) {
+        var params: [String: Any] = [:]
+        
+        params[JKKeys.id] = id
+        params[JKKeys.name] = name
+        
+        let _ = JKNetwork.shared.query(path: "category/update", method: .post, parameters: params, success: { json in
+            do {
+                guard let data = json.dictionaryObject?[JKKeys.category] as? [String: Any] else {
+                    failure()
+                    return
+                }
+                
+                let object = try JKBusiness.init(args: data)
+                
+                JKCategoryCache.shared.addObject(id: object.id, object: object)
+                
+                success()
+            } catch {
+                failure()
+            }
+        }, failure: failure)
+    }
+    
+    // Create business request
+    static func updateProduct(id: UInt, name: String? = nil, price: Float? = nil, category: UInt? = nil, url: String? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+        var params: [String: Any] = [:]
+        
+        params[JKKeys.id] = id
+        if let name = name {
+            params[JKKeys.name] = name
+        }
+        if let price = price {
+            params[JKKeys.price] = price
+        }
+        if let category = category {
+            params[JKKeys.categoryId] = category
+        }
+        if let url = url {
+            params[JKKeys.url] = url
+        }
+        
+        let _ = JKNetwork.shared.query(path: "product/update", method: .post, parameters: params, success: { json in
+            do {
+                guard let data = json.dictionaryObject?[JKKeys.category] as? [String: Any] else {
+                    failure()
+                    return
+                }
+                
+                let object = try JKBusiness.init(args: data)
+                
+                JKProductCache.shared.addObject(id: object.id, object: object)
+                
+                success()
+            } catch {
+                failure()
+            }
+        }, failure: failure)
+    }
+    
+    
+    // Create business request
+    static func deleteItem(userId: UInt = 0, businessId: UInt = 0, productId: UInt = 0, categoryId: UInt = 0, success: @escaping () -> Void, failure: @escaping () -> Void) {
+        var params: [String: Any] = [:]
+        
+        params[JKKeys.userId] = userId
+        params[JKKeys.businessId] = businessId
+        params[JKKeys.productId] = productId
+        params[JKKeys.categoryId] = categoryId
+        
+        let _ = JKNetwork.shared.query(path: "delete", method: .post, parameters: params, success: { json in
+            success()
+            if productId != 0 {
+                JKProductCache.shared.removeObject(id: productId)
+            }
+            if categoryId != 0 {
+                JKCategoryCache.shared.removeObject(id: categoryId)
+            }
+        }, failure: failure)
+    }
+    
 }
 
 extension Formatter {

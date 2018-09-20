@@ -8,8 +8,15 @@
 
 import UIKit
 import ArtUtilities
+import Stripe
+
+protocol AuthentificationDelegate {
+    func userLogged()
+}
 
 class AuthentificationViewController: UIViewController {
+    
+    var delegate: AuthentificationDelegate?
 
     @IBOutlet weak var logInEmail: UITextField!
     @IBOutlet weak var logInPassword: UITextField!
@@ -27,8 +34,12 @@ class AuthentificationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        
+//        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     @IBAction func cheatTapped(_ sender: Any) {
@@ -48,40 +59,20 @@ class AuthentificationViewController: UIViewController {
         JKMediator.logUser(email: email, password: password, success: { user in
             JKSession.shared.user = user
             self.navigationController?.popViewController(animated: true)
+            self.delegate?.userLogged()
         }, failure: {})
-    }
-    
-    @IBAction func acceptCguTapped(_ sender: Any) {
-        cguButton.isSelected = !cguButton.isSelected
-        cguButton.borderColor = cguButton.isSelected ? UIColor.green : UIColor.darkGray
-        cguButton.titleLabel?.textColor = cguButton.isSelected ? UIColor.green : UIColor.darkGray
-    }
-    
-    @IBAction func cguTapped(_ sender: Any) {
-        navigationController?.pushViewController(homeStoryboard.instantiateViewController(withIdentifier: "CGU"), animated: true)
     }
     
     @IBOutlet weak var signUpButton: AUButton!
     
     @IBAction func signUpTapped(_ sender: Any) {
-        guard
-            let email = signUpEmail.text,
-            let name = signUpName.text,
-            cguButton.isSelected,
-            let password = signUpPassword.text else {
-                return
+        guard let vc = authStoryboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else {
+            return
         }
         
-        signUpButton.isEnabled = false
-        JKMediator.createUser(name: name, email: email, password: password, success: { id in
-            
-            JKMediator.logUser(email: email, password: password, success: { user in
-                JKSession.shared.user = user
-                self.navigationController?.popViewController(animated: true)
-                self.signUpButton.isEnabled = true
-            }, failure: {})
-        }, failure: {
-            self.signUpButton.isEnabled = true
-        })
+        vc.delegate = delegate
+        navigationController?.replaceCurrentViewController(with: vc, animated: true)
     }
+    
+    
 }

@@ -35,6 +35,10 @@ class PlaceOverviewViewController: APresentableViewController {
         }
     }
     
+    override var sizePt: CGFloat {
+        return 150
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

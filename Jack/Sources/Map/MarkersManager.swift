@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import JackModel
+import ArtUtilities
 
 class MarkersManager {
     
@@ -93,6 +94,36 @@ class JKMarker: GMSMarker {
             JKImageLoader.loadImage(imageView: markerView.imageView, url: location.url) {}
             //            markerView.imageView.imageFromURL(urlString: location.url)
         }
+    }
+    
+}
+
+class GPSPosMarker: GMSMarker {
+    
+    var location: CLLocation
+    
+    var view: AUView? {
+        return self.iconView as? AUView
+    }
+    
+    var displayed: Bool {
+        return self.map != nil
+    }
+    
+    var width: CGFloat = 15
+    
+    init(_ location: CLLocation) {
+        self.location = location
+        super.init()
+        self.position = location.coordinate
+        
+        self.iconView = AUView.init(frame: CGRect.init(x: -width / 2, y: -width / 2, width: width, height: width))
+        self.tracksViewChanges = true
+        
+        self.view?.cornerRadiusRatio = 0.5
+        self.view?.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+        self.view?.borderWidth = 2
+        self.view?.borderColor = UIColor.blue
     }
     
 }

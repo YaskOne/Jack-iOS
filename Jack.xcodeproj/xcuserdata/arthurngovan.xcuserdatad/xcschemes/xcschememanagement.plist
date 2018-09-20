@@ -4,10 +4,48 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Jack Dev.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>Jack Stage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>Jack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>13</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D7DCF59E20EE728900469751</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7DCF5B220EE728A00469751</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7DCF5BD20EE728A00469751</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7F9E90F2151687E00B1F15F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7F9E9AB2151733900B1F15F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

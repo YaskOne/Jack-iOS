@@ -11,15 +11,18 @@ import ArtUtilities
 
 class UserProfileViewController: UIViewController {
     
-    @IBOutlet weak var surnameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var surnameLabel: AULabeledTextField!
+    @IBOutlet weak var emailLabel: AULabeledTextField!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(setUp), name: businessChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setUp), name: userChangedNotification, object: nil)
         navigationController?.setNavigationBarHidden(true, animated: true)
 
+//        if JKSession.shared.userId == 0 {
+//            
+//        }
         setUp()
     }
     

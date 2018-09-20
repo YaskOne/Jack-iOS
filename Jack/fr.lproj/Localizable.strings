@@ -35,6 +35,8 @@
 "instructions_delete_account_title" = "Pour supprimer ton compte tape \"[$name]\" puis valide";
 "cancel_order_title" = "Annuler la commande";
 "confirm_cancel_order" = "Es-tu sûr de vouloir annuler la commande?";
+"current_orders_title" = "En cours";
+"past_orders_title" = "Passées";
 
 // AUTH (JACK)
 "not_authenticated_title" = "Tu as faim ? Connecte toi ou enregistre toi d’abord.";

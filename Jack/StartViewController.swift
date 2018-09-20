@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ArtUtilities
 
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
@@ -26,16 +27,15 @@ class StartViewController: UIViewController {
         transition.type = kCATransitionFade
         self.navigationController!.view.layer.add(transition, forKey: nil)
         
+        AUToastController.shared.container = view
+        
         let controller = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController")
         navigationController?.pushViewController(controller, animated: false)
+        
+        if JKSession.shared.userId != 0 {
+            NotificationCenter.default.post(name: userLoggedNotification, object: nil, userInfo: nil)
+        }
     }
     
-//    @IBAction func buttonClick(_ sender: Any) {
-//    }
-//
-//    @IBAction func registerClicked(_ sender: Any) {
-//        let controller = authStoryboard.instantiateViewController(withIdentifier: "APageViewController")
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
 }
 

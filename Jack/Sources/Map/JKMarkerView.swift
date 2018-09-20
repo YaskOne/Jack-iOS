@@ -9,7 +9,7 @@
 import UIKit
 import ArtUtilities
 
-class JKMarkerView: AView {
+class JKMarkerView: AUView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageView: AUImageView!
@@ -30,7 +30,7 @@ class JKMarkerView: AView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         imageView.frame = self.frame
         imageView.frame.size = CGSize.init(width: imageView.frame.width, height: imageView.frame.width)
-        imageView.setUp()
+//        imageView.setUp()
     }
     
 }

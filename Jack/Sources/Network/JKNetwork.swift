@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import ArtUtilities
 
 class JKNetwork {
     
@@ -32,7 +33,7 @@ class JKNetwork {
         headers["Accept"] = "application/json"
         headers["authorization"] = "allow"
         
-        print("----------------------------- Request: \(path)")
+        print("Request: \(path)")
         print("  - parameters: \(String(describing: parameters))")
         Alamofire
             .request(server! + "/" + path, method: method, parameters: parameters, encoding: paramsEncoding, headers: headers)
@@ -41,13 +42,22 @@ class JKNetwork {
                 do {
                     var json = try JSON(data: response.data!)
                     
+                    if let status = response.response?.statusCode {
+                        print("Status: \(status)")
+                    }
                     if let error = json.dictionaryObject?["error"] {
-                        print("Error: \(path)")
-                        print("  - message: \(error)")
+                        AUToastController.shared.toast(text: "Error: \(error)", type: .info)
                     }
-                    else {
-                        print("Success: \(path)")
+                    else if let error = json.dictionaryObject?["message"] {
+                        AUToastController.shared.toast(text: "Error: \(error)", type: .info)
                     }
+                    
+                    if response.response?.statusCode != 200 {
+                        failure()
+                        return
+                    }
+                    
+                    print("Success: \(path)")
                     
                     success(json)
                 } catch {
