@@ -173,15 +173,15 @@ class ProductOrderCell: UITableViewCell {
     }
     
     @IBAction func addItemTapped(_ sender: Any) {
-        orderCount += 1
         if let product = product {
+            orderCount += 1
             delegate?.addItem(item: product)
         }
     }
     
     @IBAction func removeItemTapped(_ sender: Any) {
-        orderCount -= 1
-        if let product = product {
+        if let product = product, orderCount > 0 {
+            orderCount -= 1
             delegate?.removeItem(item: product)
         }
     }

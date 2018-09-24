@@ -367,12 +367,15 @@ class JKMediator {
         }, failure: failure)
     }
     
-    static func updateOrder(orderId: UInt, userId: UInt, status: Int? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+    static func updateOrder(orderId: UInt, userId: UInt, status: Int? = nil, retrieveDate: Date? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
         
         params[JKKeys.orderId] = orderId
         params[JKKeys.userId] = userId
         
+        if let retrieveDate = retrieveDate {
+            params[JKKeys.retrieveDate] = retrieveDate.getISO8601()
+        }
         if let status = status {
             params[JKKeys.status] = status
         }
@@ -454,7 +457,7 @@ class JKMediator {
     }
     
     // Create business request
-    static func updateBusiness(id: UInt, email: String? = nil, name: String? = nil, password: String? = nil, address: String? = nil, type: String? = nil, description: String? = nil, url: String? = nil, fcmToken: String? = nil, defaultPreparationDuration: Double? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
+    static func updateBusiness(id: UInt, email: String? = nil, name: String? = nil, password: String? = nil, address: String? = nil, type: String? = nil, description: String? = nil, url: String? = nil, fcmToken: String? = nil, defaultPreparationDuration: Double? = nil, status: Int? = nil, success: @escaping () -> Void, failure: @escaping () -> Void) {
         var params: [String: Any] = [:]
         
         params[JKKeys.id] = id
@@ -484,6 +487,9 @@ class JKMediator {
         }
         if let defaultPreparationDuration = defaultPreparationDuration {
             params[JKKeys.defaultPreparationDuration] = defaultPreparationDuration
+        }
+        if let status = status {
+            params[JKKeys.status] = status
         }
         
         let _ = JKNetwork.shared.query(path: "business/update", method: .post, parameters: params, success: { json in
