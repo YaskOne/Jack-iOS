@@ -1,3 +1,3 @@
 # Jack-iOS
 
-JACK's social App (Swift 4)
+JACK's map based social App (Swift 4)
